@@ -23,9 +23,6 @@ function App() {
             <Route path="/sponsors" element={<Sponsors />} /> {/* Stran za prijavo */}
             <Route path="/blog" element={<Blog />} /> {/* Stran za prijavo */}
             <Route path="/about" element={<About />} /> {/* Stran za prijavo */}
-
-          
-          
           </Routes>
         </div>
         <Footer />
