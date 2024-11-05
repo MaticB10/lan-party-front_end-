@@ -1,7 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
-import Login from './pages/LoginPage';
 import { AuthProvider } from './contexts/AuthContext';
 import './styles/index.css';
 
