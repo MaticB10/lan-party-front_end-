@@ -1,7 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faEye } from '@fortawesome/free-solid-svg-icons';
-import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import glyphUndefined from "../image/glyph-undefined.png";
 import googleButton from "../image/google-button.png";
 import image1 from "../image/image.png";
