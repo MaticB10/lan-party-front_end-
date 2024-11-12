@@ -1,0 +1,77 @@
+/* Home.css */
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #040a11;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    padding-top: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .home-header {
+    margin-bottom: 60px;
+  }
+  
+  .home-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  
+  .info-section {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+  }
+  
+  .info-box {
+    width: 250px;
+    padding: 20px;
+    background: rgba(50, 0, 78, 0.8); /* Matching Figma's dark translucent purple */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: left;
+  }
+  
+  .info-box h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  .info-box p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 5px 0;
+  }
+  
+  .register-button {
+    width: 180px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #4e0b7a, #7e27c9);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .register-button .arrow-icon {
+    margin-left: 8px;
+    font-size: 18px;
+    color: #ffffff;
+  }
+  

@@ -1,34 +1,54 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Header from './components/Header';
-import Dashboard from './components/Dashboard';
+import Home from './components/Home';
 import Login from './components/Login';
-import Footer from './components/Footer';
+import Register from './components/Register';
 import Team from './components/Team';
-import Sponsors from './components/sponsors';
+import Sponsors from './components/Sponsors';
 import Blog from './components/Blog';
 import About from './components/About';
+import Footer from './components/Footer';
 import './styles/App.css';
 
 function App() {
+  const location = useLocation();
+
+  // Determine the overlay class based on the current route
+  const overlayClass =
+    location.pathname === '/' ? 'home-overlay' :
+    location.pathname === '/login' ? 'login-overlay' :
+    location.pathname === '/register' ? 'register-overlay' : '';
+    location.pathname === '/team' ? 'team-overlay' :
+    location.pathname === '/sponsors' ? 'sponsors-overlay' :
+    location.pathname === '/blog' ? 'blog-overlay' :
+    location.pathname === '/about' ? 'about-overlay' :
+    '';
+
   return (
-    <Router>
-      <div className="app">
-        <Header />
-        <div className="main-content">
-          <Routes>
-            <Route path="/" element={<Dashboard />} /> {/* Osnovna stran */}
-            <Route path="/login" element={<Login />} /> {/* Stran za prijavo */}
-            <Route path="/team" element={<Team />} /> {/* Stran za prijavo */}
-            <Route path="/sponsors" element={<Sponsors />} /> {/* Stran za prijavo */}
-            <Route path="/blog" element={<Blog />} /> {/* Stran za prijavo */}
-            <Route path="/about" element={<About />} /> {/* Stran za prijavo */}
-          </Routes>
-        </div>
-        <Footer />
+    <div className="app">
+      <Header />
+      <div className={`gradient-overlay ${overlayClass}`}></div> {/* Dynamic overlay class */}
+      <div className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/sponsors" element={<Sponsors />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </div>
-    </Router>
+      <Footer />
+    </div>
   );
 }
 
-export default App;
+export default function AppWrapper() {
+  return (
+    <Router>
+      <App />
+    </Router>
+  );
+}

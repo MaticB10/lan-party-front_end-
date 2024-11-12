@@ -1,21 +1,124 @@
 /* App.css */
 
 .app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  .main-content {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .content-area {
-    width: 100%;
-    max-width: 1200px;
-    padding: 20px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #040a11;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Base structure for the gradient overlay */
+.gradient-overlay {
+  width: 1167.735px;
+  height: 922.536px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.75;
+  filter: blur(175px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Home (Dashboard) overlay */
+.home-overlay {
+  background: conic-gradient(
+    from 88deg at 37.93% 62.87%,
+    rgba(0, 111, 255, 0.65) 0deg,
+    rgba(255, 0, 229, 0.65) 360deg
+  );
+  transform: translate(-50%, -50%) rotate(22.745deg);
+}
+
+/* Login overlay */
+.login-overlay {
+  width: 867.735px;
+  height: 722.536px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(22.745deg);
+  background: conic-gradient(
+    from 88deg at 37.93% 62.87%,
+    rgba(0, 111, 255, 0.65) 0deg,
+    rgba(255, 0, 229, 0.65) 360deg
+  );
+  opacity: 0.75;
+  filter: blur(175px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Register overlay specific styling */
+.register-overlay {
+  width: 1114.111px;
+  height: 908.571px;
+  transform: translate(-50%, -50%) rotate(-139.133deg);
+  background: conic-gradient(
+    from 88deg at 37.6% 56.82%,
+    rgba(0, 111, 255, 0.65) 0deg,
+    rgba(255, 0, 229, 0.65) 360deg
+  );
+  opacity: 0.75;
+  filter: blur(175px);
+}
+
+/* Team overlay */
+.team-overlay {
+  background: conic-gradient(
+    from 120deg at 40% 60%,
+    rgba(255, 0, 255, 0.65) 0deg,
+    rgba(0, 122, 204, 0.65) 360deg
+  );
+  transform: translate(-50%, -50%) rotate(15deg);
+}
+
+/* Sponsors overlay */
+.sponsors-overlay {
+  background: conic-gradient(
+    from 135deg at 50% 50%,
+    rgba(204, 0, 0, 0.65) 0deg,
+    rgba(255, 165, 0, 0.65) 360deg
+  );
+  transform: translate(-50%, -50%) rotate(-10deg);
+}
+
+/* Blog overlay */
+.blog-overlay {
+  background: conic-gradient(
+    from 100deg at 45% 55%,
+    rgba(255, 20, 147, 0.65) 0deg,
+    rgba(30, 144, 255, 0.65) 360deg
+  );
+  transform: translate(-50%, -50%) rotate(30deg);
+}
+
+/* About overlay */
+.about-overlay {
+  background: conic-gradient(
+    from 70deg at 35% 65%,
+    rgba(34, 139, 34, 0.65) 0deg,
+    rgba(173, 255, 47, 0.65) 360deg
+  );
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.content-area {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}

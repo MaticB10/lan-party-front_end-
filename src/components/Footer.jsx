@@ -2,6 +2,11 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faDiscord } from '@fortawesome/free-brands-svg-icons';
+import balix from '../image/balix-logo.png';
+import eigre from '../image/eigre-logo.png';
+import sasa from '../image/sasa-inkubator-logo.png';
+import uvi from '../image/UVI-logo.png';
+import snackKing from '../image/snac-king-logo.png';
 import '../styles/Footer.css';
 
 function Footer() {
@@ -20,11 +25,11 @@ function Footer() {
         </p>
       </div>
       <div className="sponsors">
-        <img src="/images/balix.png" alt="Balix" />
-        <img src="/images/logo2.png" alt="Sponsor Logo 2" />
-        <img src="/images/sasa.png" alt="SASA Inkubator" />
-        <img src="/images/uvi.png" alt="UVI" />
-        <img src="/images/snackking.png" alt="Snack King" />
+        <img src={balix} alt="Balix" />
+        <img src={eigre} alt="Eigre" />
+        <img src={sasa} alt="SASA Inkubator" />
+        <img src={uvi} alt="UVI" />
+        <img src={snackKing} alt="Snack King" />
       </div>
     </footer>
   );
