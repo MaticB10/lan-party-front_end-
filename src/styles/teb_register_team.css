@@ -1,0 +1,68 @@
+/* TebRegisterTeam.css */
+
+.register-team-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+.register-team-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.register-team-column h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.register-team-column label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.register-team-column input[type="text"],
+.register-team-column select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: #cecece;
+    border: none;
+    border-radius: 8px;
+}
+
+.team-members-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.team-members-list li {
+    background-color: transparent;
+}
+
+.save-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: rgba(73, 40, 106, 1);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+}

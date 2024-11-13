@@ -1,0 +1,82 @@
+.login-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .login-section, .login-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  
+  .radio-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .radio-group label {
+    font-weight: 500;
+    color: #ffffff;
+  }
+  
+  .label-select {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .tournament-select {
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    border-radius: 8px;
+    border: none;
+  }
+  
+  .team-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  .input-label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  
+  .input-field {
+    background-color: #cecece;
+    color: #333;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .save-button {
+    background-color: #6c3a9b;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-top: 20px;
+  }
+  

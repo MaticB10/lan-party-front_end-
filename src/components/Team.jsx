@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers, faUserPlus, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import TebTeam from './team/teb_team';
+import TebRegisterTeam from './team/teb_register_team';
+import TebLogin from './team/teb_login';
+import TebInfo from './team/teb_info';
 import '../styles/Team.css';
 
 function Team() {
+  const [selectedTab, setSelectedTab] = useState('team'); // Default to 'team' tab
+
+  // Function to render the selected component
+  const renderContent = () => {
+    switch (selectedTab) {
+      case 'team':
+        return <TebTeam />;
+      case 'registerTeam':
+        return <TebRegisterTeam />;
+      case 'login':
+        return <TebLogin />;
+      case 'info':
+        return <TebInfo />;
+      default:
+        return <TebTeam />;
+    }
+  };
+
   return (
     <div className="team-page">
       {/* Gradient Background Overlay */}
@@ -11,62 +33,26 @@ function Team() {
 
       {/* Main Content Container */}
       <div className="team-content">
-        
-        {/* Heading */}
-        <h1 className="team-heading">Ekipe</h1>
-        
-        
-        {/* Team Groups */}
-        <div className="team-groups">
-          <div className="team-group">
-            <h2>Ekipa 1 - 5</h2>
-            <ul>
-              <li>Shadow Strikers</li>
-              <li>Crimson Vortex</li>
-              <li>Phantom Squad</li>
-              <li>Venomous Reapers</li>
-              <li>Blaze Battalion</li>
-            </ul>
-          </div>
-
-          <div className="team-group">
-            <h2>Ekipa 5 - 10</h2>
-            <ul>
-              <li>Titan Fury</li>
-              <li>Eclipse Guardians</li>
-              <li>Iron Wolves</li>
-              <li>Nebula Raiders</li>
-              <li>Quantum Force</li>
-            </ul>
-          </div>
-
-          <div className="team-group">
-            <h2>Ekipa 10 - 15</h2>
-            <ul>
-              <li>Titan Fury</li>
-              <li>Eclipse Guardians</li>
-              <li>Iron Wolves</li>
-              <li>Nebula Raiders</li>
-              <li>Quantum Force</li>
-            </ul>
-          </div>
+        {/* Render Selected Tab Content */}
+        <div className="team-tab-content">
+          {renderContent()}
         </div>
 
-        {/* Action Buttons */}
+        {/* Action Buttons (Fixed Position) */}
         <div className="team-actions">
-          <button className="team-action-button">
+          <button className="team-action-button" onClick={() => setSelectedTab('team')}>
             <FontAwesomeIcon icon={faUsers} className="fa-icon" />
             <span>Ekipa</span>
           </button>
-          <button className="team-action-button">
+          <button className="team-action-button" onClick={() => setSelectedTab('registerTeam')}>
             <FontAwesomeIcon icon={faUserPlus} className="fa-icon" />
             <span>Prijavi ekipo</span>
           </button>
-          <button className="team-action-button">
+          <button className="team-action-button" onClick={() => setSelectedTab('login')}>
             <FontAwesomeIcon icon={faUserPlus} className="fa-icon" />
             <span>Prijavi se</span>
           </button>
-          <button className="team-action-button">
+          <button className="team-action-button" onClick={() => setSelectedTab('info')}>
             <FontAwesomeIcon icon={faInfoCircle} className="fa-icon" />
             <span>O dogodku</span>
           </button>
