@@ -100,7 +100,7 @@
   filter: blur(85px);
   position: absolute; /* Adjust positioning as necessary */
   top: 0; /* Adjust positioning to match your layout */
-  left: 0; /* Adjust positioning to match your layout */
+  left: 650px; /* Adjust positioning to match your layout */
 }
 
 /* Blog overlay */
