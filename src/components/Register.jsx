@@ -21,7 +21,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8081/register', formData);
+      const response = await axios.post('http://78.47.245.88:8081/register', formData);
       setMessage(response.data.message);
       
       // Po uspešni registraciji ponastavi polja za vnos

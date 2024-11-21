@@ -10,7 +10,7 @@ function Sponsors() {
 
   useEffect(() => {
     // Pridobi podatke o sponzorjih iz API-ja
-    fetch('http://localhost:8081/sponsors')
+    fetch('http://78.47.245.88:8081/sponsors')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Napaka pri pridobivanju podatkov.');

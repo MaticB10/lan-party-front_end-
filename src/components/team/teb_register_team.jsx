@@ -9,7 +9,7 @@ function TebRegisterTeam() {
   useEffect(() => {
     const fetchTournaments = async () => {
       try {
-        const response = await fetch('http://localhost:8081/tournaments'); // Prepričajte se, da je endpoint pravilen
+        const response = await fetch('http://78.47.245.88:8081/tournaments'); // Prepričajte se, da je endpoint pravilen
         const data = await response.json();
         setTournaments(data);
       } catch (error) {
