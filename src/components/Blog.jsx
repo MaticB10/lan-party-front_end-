@@ -20,7 +20,6 @@ function About() {
           <p>Vodnikova cesta 2, 3320 Velenje</p>
         </div>
       </div>
-      <button className="dashboard-button">PRIJAVI SE →</button>
     </div>
   );
 }
