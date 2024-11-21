@@ -10,6 +10,7 @@ function Home() {
 
       <div className="info-section">
         <div className="info-box">
+          <img src="./image/Ellipse_Kdaj.png" alt="Ellipse" />
           <h2>KDAJ?</h2>
           <p>Zadnji vikend februarja</p>
           <p>Pričnemo ob 15:00 28.2.2025</p>
