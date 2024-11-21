@@ -1,7 +1,12 @@
 import React from 'react';
 import '../styles/Home.css';
+import { Link } from "react-router-dom";
+import { useAuth } from '../contexts/AuthContext';
+
 
 function Home() {
+  const { user } = useAuth(); // Pridobimo informacije o prijavi
+
   return (
     <div className="home-page">
       <header className="home-header">
@@ -25,9 +30,13 @@ function Home() {
         </div>
       </div>
 
-      <button className="register-button">
-        PRIJAVI SE <span className="arrow-icon">→</span>
-      </button>
+      {!user && (      
+        <Link to="/login">
+          <button to="/login" className="register-button">
+            PRIJAVI SE <span className="arrow-icon">→</span>
+          </button>
+        </Link>
+      )}
     </div>
   );
 }
