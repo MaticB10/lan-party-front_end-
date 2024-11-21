@@ -2,27 +2,27 @@ import React, { useState, useEffect } from 'react';
 import '../../styles/teb_register_team.css';
 
 function TebRegisterTeam() {
-  const [games, setGames] = useState([]); // Shrani seznam iger iz baze
-  const [selectedGame, setSelectedGame] = useState(''); // Shrani izbrano igro
+  const [tournaments, setTournaments] = useState([]); // Shrani seznam turnirjev iz baze
+  const [selectedTournament, setSelectedTournament] = useState(''); // Shrani izbran turnir
 
-  // Pridobi igre s tournament_type = 1 iz API-ja ob prvem nalaganju komponente
+  // Pridobi turnirje s statusom "active" iz API-ja ob prvem nalaganju komponente
   useEffect(() => {
-    const fetchGames = async () => {
+    const fetchTournaments = async () => {
       try {
-        const response = await fetch('http://localhost:8081/games');
+        const response = await fetch('http://localhost:8081/tournaments'); // Prepričajte se, da je endpoint pravilen
         const data = await response.json();
-        setGames(data);
+        setTournaments(data);
       } catch (error) {
-        console.error("Napaka pri pridobivanju iger:", error);
+        console.error("Napaka pri pridobivanju turnirjev:", error);
       }
     };
 
-    fetchGames();
+    fetchTournaments();
   }, []);
 
-  // Funkcija za obravnavo izbire igre
-  const handleGameSelect = (event) => {
-    setSelectedGame(event.target.value);
+  // Funkcija za obravnavo izbire turnirja
+  const handleTournamentSelect = (event) => {
+    setSelectedTournament(event.target.value);
   };
 
   return (
@@ -42,13 +42,13 @@ function TebRegisterTeam() {
       <div className="register-team-column">
         <h1>Prijavi Ekipo</h1>
         <label htmlFor="team-name">Ime ekipe</label>
-        <input type="text" id="team-name" value="Ime ekipe" readOnly />
+        <input type="text" id="team-name" placeholder="Vnesite ime ekipe" />
         <label htmlFor="select-tournament">Izberi turnir:</label>
-        <select id="select-tournament" value={selectedGame} onChange={handleGameSelect}>
-          <option value="" disabled>Izberite igro</option>
-          {games.map((game) => (
-            <option key={game.id} value={game.name}>
-              {game.name}
+        <select id="select-tournament" value={selectedTournament} onChange={handleTournamentSelect}>
+          <option value="" disabled>Izberite turnir</option>
+          {tournaments.map((tournament) => (
+            <option key={tournament.id} value={tournament.id}>
+              {tournament.name}
             </option>
           ))}
         </select>
