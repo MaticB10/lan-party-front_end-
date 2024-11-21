@@ -3,6 +3,7 @@ import '../styles/Sponsors.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
+
 function Sponsors() {
   const [sponsors, setSponsors] = useState([]); // Podatki o sponzorjih
   const [currentIndex, setCurrentIndex] = useState(0); // Trenutni indeks za navigacijo
@@ -54,11 +55,17 @@ function Sponsors() {
         {visibleSponsors.map((sponsor) => (
           <div key={sponsor.id} className="sponsor-card">
             {/* Dodaj placeholder sliko ali podporo za slike, če so vključene v podatke */}
-            <img
-              src={`/path/to/images/${sponsor.slika}.png`} // Nadomesti z dejansko potjo
-              alt={sponsor.name}
-              className="sponsor-logo"
-            />
+            <a href={sponsor.link} target="_blank" rel="noopener noreferrer">
+              <img
+                src={
+                  sponsor.slika
+                    ? new URL(`../image/${sponsor.slika}.png`, import.meta.url).href
+                    : new URL('../image/default-logo.png', import.meta.url).href
+                }
+                alt={sponsor.name}
+                className="sponsor-logo"
+              />
+            </a>
             <h2>{sponsor.name}</h2>
             <p>{sponsor.description}</p>
           </div>
