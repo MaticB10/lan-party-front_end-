@@ -1,23 +1,25 @@
 /* Header.css */
-
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 80px;
+  padding: 20px 5vw; /* Flexible horizontal padding */
   background-color: transparent;
   color: #ffffff;
   font-family: "Poppins", sans-serif;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 .header-title {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 1.5rem; /* Use relative units for scalable typography */
+  margin-bottom: 10px; /* Add spacing for smaller devices */
 }
 
 .header-nav {
   display: flex;
-  gap: 30px;
+  gap: 2rem; /* Flexible gap between nav items */
+  flex-wrap: wrap; /* Wrap navigation items on smaller screens */
 }
 
 .header-nav a,
@@ -25,16 +27,17 @@
   color: #ffffff;
   text-decoration: none;
   font-weight: 500;
+  font-size: 1rem;
 }
 
 .header-user a {
   color: #ffffff;
   text-decoration: none;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1rem; /* Use relative units */
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.5rem; /* Adjust gap between user icon and text */
 }
 
 .user-menu {
@@ -70,4 +73,59 @@
 
 .dropdown-item:hover {
   background-color: #f0f0f0;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small devices (phones) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align everything */
+  }
+
+  .header-title {
+    text-align: center; /* Center the title text */
+    margin-bottom: 20px; /* Add some spacing below the title */
+  }
+
+  .header-nav {
+    justify-content: center; /* Center the navigation items */
+    gap: 15px; /* Adjust gap between links */
+  }
+
+  .header-nav a,
+  .header-nav span {
+    font-size: 0.9rem; /* Reduce font size */
+  }
+
+  .header-user a {
+    top: 10px;
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
+  .user-menu {
+    width: 100%; /* Full width for dropdown trigger */
+    text-align: center; /* Center align */
+  }
+}
+
+/* Medium devices (tablets) */
+@media (max-width: 1024px) {
+  .header {
+    flex-wrap: wrap; /* Wrap header items */
+    padding: 20px 4vw; /* Adjust padding for tablets */
+  }
+
+  .header-title {
+    font-size: 1.3rem; /* Slightly smaller title */
+  }
+
+  .header-nav {
+    gap: 1.5rem; /* Moderate gap between items */
+  }
+
+  .header-user a {
+    font-size: 1rem; /* Slightly smaller font size */
+  }
 }

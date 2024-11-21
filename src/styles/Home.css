@@ -1,5 +1,4 @@
 /* Home.css */
-
 .home-page {
   display: flex;
   flex-direction: column;
@@ -9,7 +8,7 @@
   color: #ffffff;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
-  padding: 40px 20px;
+  padding: 40px 5vw; /* Flexible horizontal padding */
   position: relative;
   overflow: hidden;
 }
@@ -19,7 +18,7 @@
 }
 
 .home-title {
-  font-size: 36px;
+  font-size: 2.25rem; /* Scalable typography */
   font-weight: 700;
   color: #ffffff;
 }
@@ -32,7 +31,7 @@
 }
 
 .info-box {
-  width: 90%;
+  width: 90%; /* Full width with max limit */
   max-width: 300px;
   padding: 20px;
   background: rgba(50, 0, 78, 0.8);
@@ -42,14 +41,14 @@
 }
 
 .info-box h2 {
-  font-size: 24px;
+  font-size: 1.5rem; /* Scalable heading size */
   font-weight: 700;
   margin-bottom: 10px;
   color: #ffffff;
 }
 
 .info-box p {
-  font-size: 14px;
+  font-size: 0.875rem; /* Scalable body text */
   font-weight: 400;
   color: #ffffff;
   margin: 5px 0;
@@ -61,7 +60,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 1rem; /* Scalable button text */
   font-weight: 700;
   color: #ffffff;
   background: linear-gradient(135deg, #4e0b7a, #7e27c9);
@@ -73,45 +72,66 @@
 
 .register-button .arrow-icon {
   margin-left: 8px;
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #ffffff;
 }
 
-/* Responsive Design */
-@media (min-width: 768px) {
+/* Small devices (phones) */
+@media (max-width: 768px) {
+  .home-title {
+    font-size: 1.8rem; /* Reduce title size for phones */
+  }
+
   .info-section {
-    flex-direction: row;
-    gap: 40px;
-    justify-content: center;
+    flex-direction: column;
+    gap: 20px; /* Keep consistent spacing */
   }
 
   .info-box {
-    width: 250px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .home-title {
-    font-size: 48px;
-  }
-
-  .info-section {
-    gap: 60px;
-  }
-
-  .info-box h2 {
-    font-size: 28px;
-  }
-
-  .info-box p {
-    font-size: 16px;
+    max-width: 90%; /* Ensure boxes fill smaller screens */
   }
 
   .register-button {
-    width: 200px;
-    height: 50px;
-    font-size: 18px;
+    width: 160px; /* Smaller button width */
+    height: 40px;
+    font-size: 0.9rem; /* Adjust font size for buttons */
   }
 }
 
-  
+/* Medium devices (tablets) */
+@media (min-width: 768px) {
+  .info-section {
+    flex-direction: row; /* Switch to horizontal layout */
+    gap: 2rem; /* Flexible spacing between boxes */
+    justify-content: center; /* Center-align sections */
+  }
+
+  .info-box {
+    width: 250px; /* Adjusted size for tablets */
+  }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 1024px) {
+  .home-title {
+    font-size: 3rem; /* Larger title for desktops */
+  }
+
+  .info-section {
+    gap: 3rem; /* Increase spacing between info boxes */
+  }
+
+  .info-box h2 {
+    font-size: 1.75rem; /* Larger headings */
+  }
+
+  .info-box p {
+    font-size: 1rem; /* Slightly larger body text */
+  }
+
+  .register-button {
+    width: 200px; /* Larger button size */
+    height: 50px;
+    font-size: 1.125rem; /* Larger font size */
+  }
+}

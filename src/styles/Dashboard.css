@@ -1,5 +1,4 @@
 /* Dashboard.css */
-
 .dashboard {
   display: flex;
   flex-direction: column;
@@ -7,7 +6,7 @@
   justify-content: center;
   background: linear-gradient(145deg, #1e1e2e, #312450);
   color: white;
-  padding: 40px;
+  padding: 5vw; /* Use viewport width for flexible padding */
   min-height: 100vh;
 }
 
@@ -22,7 +21,9 @@
 
 .dashboard-sections {
   display: flex;
-  gap: 40px;
+  flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+  gap: 2rem; /* Flexible spacing */
+  justify-content: center; /* Center align sections */
   margin-bottom: 40px;
 }
 
@@ -31,8 +32,15 @@
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
-  width: 250px;
+  width: 250px; /* Default width */
+  max-width: 90vw; /* Prevent overflow on smaller screens */
   text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dashboard-section:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
 }
 
 .dashboard-section h2 {
@@ -57,7 +65,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
-  padding: 15px 30px;
+  padding: 1rem 2rem;
   border: none;
   border-radius: 30px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -68,4 +76,55 @@
 .dashboard-button:hover {
   transform: scale(1.05);
   background-color: #5c3e82;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small devices (phones) */
+@media (max-width: 768px) {
+  .dashboard-title h1 {
+    font-size: 2rem; /* Reduce title size */
+  }
+
+  .dashboard-sections {
+    gap: 1.5rem; /* Reduce gap between sections */
+  }
+
+  .dashboard-section {
+    width: 90%; /* Make sections take up most of the screen width */
+    padding: 15px; /* Adjust padding */
+  }
+
+  .dashboard-section h2 {
+    font-size: 1.2rem; /* Adjust section title size */
+  }
+
+  .dashboard-section p {
+    font-size: 0.9rem; /* Adjust text size */
+  }
+
+  .dashboard-button {
+    font-size: 1rem; /* Reduce button font size */
+    padding: 0.8rem 1.5rem; /* Adjust button padding */
+  }
+}
+
+/* Medium devices (tablets) */
+@media (max-width: 1024px) {
+  .dashboard-title h1 {
+    font-size: 2.2rem;
+  }
+
+  .dashboard-sections {
+    gap: 2rem; /* Keep spacing moderate */
+  }
+
+  .dashboard-section {
+    width: 80%; /* Sections slightly narrower than small devices */
+  }
+
+  .dashboard-button {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+  }
 }

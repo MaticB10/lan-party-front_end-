@@ -1,82 +1,184 @@
 .login-container {
-    display: flex;
+  display: flex;
+  flex-direction: column; /* Default to column layout for smaller screens */
+  align-items: center; /* Center-align items on smaller screens */
+  justify-content: center;
+  padding: 20px 5vw; /* Flexible padding for responsiveness */
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Login Sections */
+.login-section, 
+.login-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Default alignment */
+  width: 100%; /* Full width for small devices */
+  max-width: 600px; /* Limit width on larger screens */
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.5rem; /* Scalable font size */
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Radio Group */
+.radio-group {
+  display: flex;
+  flex-wrap: wrap; /* Wrap radio options on smaller screens */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.radio-group label {
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* Select Dropdown */
+.label-select {
+  font-size: 0.875rem; /* Scalable label font size */
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.tournament-select {
+  padding: 10px;
+  font-size: 1rem; /* Scalable input font size */
+  color: #333;
+  border-radius: 8px;
+  border: none;
+  width: 100%; /* Full width for smaller devices */
+  max-width: 300px; /* Limit width for larger devices */
+}
+
+/* Team Name */
+.team-name {
+  font-size: 1.75rem; /* Scalable font size */
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Input Label and Field */
+.input-label {
+  font-size: 0.875rem; /* Scalable label font size */
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.input-field {
+  background-color: #cecece;
+  color: #333;
+  padding: 8px;
+  font-size: 1rem; /* Scalable input font size */
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  width: 100%; /* Full width for smaller devices */
+  max-width: 300px; /* Limit width for larger devices */
+}
+
+/* Save Button */
+.save-button {
+  background-color: #6c3a9b;
+  color: #ffffff;
+  font-size: 1rem; /* Scalable button font size */
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  align-self: flex-start; /* Align button to the start of the form */
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.save-button:hover {
+  background-color: #5a3085; /* Darker shade on hover */
+  transform: scale(1.05); /* Slight scaling effect */
+}
+
+/* Responsive Design */
+
+/* Small devices (phones) */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 20px;
+  }
+
+  .login-section, 
+  .login-info {
+    width: 100%; /* Full width for smaller screens */
+    max-width: none; /* Remove width restriction */
+    align-items: center; /* Center-align content */
+  }
+
+  h2 {
+    font-size: 1.25rem; /* Reduce heading size for smaller screens */
+  }
+
+  .tournament-select, 
+  .input-field {
+    width: 100%; /* Full width for inputs and dropdowns */
+  }
+
+  .save-button {
+    align-self: center; /* Center-align button */
+  }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .login-container {
+    flex-direction: row; /* Row layout for tablets */
     justify-content: space-between;
     align-items: flex-start;
-    padding: 30px;
-    color: #ffffff;
-    font-family: "Poppins", sans-serif;
   }
-  
-  .login-section, .login-info {
-    display: flex;
-    flex-direction: column;
+
+  .login-section, 
+  .login-info {
+    max-width: 400px; /* Moderate width for tablet screens */
   }
-  
+
   h2 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 15px;
+    font-size: 1.5rem;
   }
-  
-  .radio-group {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-  }
-  
-  .radio-group label {
-    font-weight: 500;
-    color: #ffffff;
-  }
-  
-  .label-select {
-    font-size: 14px;
-    font-weight: 500;
-    margin-top: 10px;
-    margin-bottom: 5px;
-  }
-  
-  .tournament-select {
-    padding: 10px;
-    font-size: 16px;
-    color: #333;
-    border-radius: 8px;
-    border: none;
-  }
-  
-  .team-name {
-    font-size: 24px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 20px;
-  }
-  
-  .input-label {
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 5px;
-  }
-  
+
+  .tournament-select, 
   .input-field {
-    background-color: #cecece;
-    color: #333;
-    padding: 8px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    width: 100%; /* Maintain full width */
+    max-width: 400px; /* Limit input width */
   }
-  
+
   .save-button {
-    background-color: #6c3a9b;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    align-self: flex-start;
-    margin-top: 20px;
+    align-self: flex-start; /* Keep button alignment */
   }
-  
+}
+
+/* Large devices (desktops) */
+@media (min-width: 1024px) {
+  .login-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .login-section, 
+  .login-info {
+    max-width: 500px; /* Wider sections for desktops */
+  }
+
+  h2 {
+    font-size: 1.75rem; /* Larger headings */
+  }
+
+  .tournament-select, 
+  .input-field {
+    max-width: 400px; /* Maintain width for large screens */
+  }
+}

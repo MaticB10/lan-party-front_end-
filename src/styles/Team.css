@@ -1,5 +1,4 @@
 /* Team.css */
-
 .team-page {
   display: flex;
   align-items: center;
@@ -10,12 +9,15 @@
   font-family: "Poppins", sans-serif;
   color: #ffffff;
   overflow: hidden;
+  padding: 0 5vw; /* Add padding for responsiveness */
 }
 
 /* Team Overlay Background */
 .team-overlay {
-  width: 1236px;
-  height: 581px;
+  width: 90%; /* Flexible width for responsiveness */
+  max-width: 1236px; /* Maintain max width for larger screens */
+  height: auto; /* Adjust height automatically */
+  padding: 30px;
   background: linear-gradient(180deg, rgba(91, 44, 128, 0.25) -2.85%, #040A11 97.15%);
   border-radius: 20px;
   position: absolute;
@@ -28,28 +30,29 @@
 /* Content Container */
 .team-content {
   display: flex;
-  justify-content: space-between; /* Align the buttons within the content */
+  flex-direction: column; /* Column layout for small devices */
   align-items: center;
-  max-width: 1100px;
-  width: 100%;
-  padding: 30px 40px;
+  justify-content: center;
+  max-width: 90%; /* Adjust for smaller screens */
+  padding: 20px; /* Add spacing */
   position: relative;
 }
 
 /* Main Content */
 .team-tab-content {
   flex: 1;
+  text-align: center;
+  margin-bottom: 20px; /* Add spacing for small devices */
 }
 
 /* Action Buttons */
 .team-actions {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+  justify-content: center; /* Center-align for responsiveness */
   align-items: center;
   gap: 15px;
-  position: absolute;
-  right: 35%;
-  transform: translateX(400px); /* Adjust this value as needed to place in the blue box */
+  margin-top: 20px;
 }
 
 .team-action-button {
@@ -64,9 +67,15 @@
   cursor: pointer;
   border: none;
   background-color: transparent;
-  width: 105px;
-  height: 52px;
+  width: 80px; /* Reduced width for small devices */
+  height: 60px; /* Adjust height for better touch targets */
   font-family: "Poppins", sans-serif;
+  transition: transform 0.2s ease, color 0.2s ease; /* Add hover effect */
+}
+
+.team-action-button:hover {
+  transform: scale(1.1); /* Slight scaling on hover */
+  color: #a29bfe; /* Change color on hover */
 }
 
 .team-action-button .fa-icon {
@@ -78,4 +87,95 @@
   margin-top: 4px;
   font-size: 12px;
   color: #ffffff;
+}
+
+/* Responsive Design */
+
+/* Small devices (phones) */
+@media (max-width: 768px) {
+  .team-page {
+    height: auto; /* Allow flexible height for small screens */
+    padding: 20px;
+  }
+
+  .team-overlay {
+    width: 100%; /* Full width for small screens */
+    padding: 20px;
+  }
+
+  .team-content {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+  }
+
+  .team-tab-content {
+    margin-bottom: 20px; /* Add spacing between content and buttons */
+  }
+
+  .team-actions {
+    gap: 10px; /* Reduce gap between buttons */
+  }
+
+  .team-action-button {
+    width: 70px; /* Smaller buttons for small screens */
+    height: 50px;
+    font-size: 10px;
+  }
+
+  .team-action-button .fa-icon {
+    font-size: 18px; /* Adjust icon size */
+  }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .team-content {
+    flex-direction: row; /* Horizontal layout for tablets */
+    justify-content: space-between;
+  }
+
+  .team-tab-content {
+    margin-right: 20px; /* Add spacing between content and buttons */
+  }
+
+  .team-actions {
+    gap: 15px; /* Moderate gap between buttons */
+  }
+
+  .team-action-button {
+    width: 90px; /* Moderate button size for tablets */
+    height: 55px;
+  }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 1024px) {
+  .team-page {
+    height: 100vh; /* Full height for large screens */
+  }
+
+  .team-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px; /* Fixed width for large screens */
+  }
+
+  .team-tab-content {
+    margin-bottom: 0;
+  }
+
+  .team-actions {
+    gap: 20px; /* Increase gap for spacious layout */
+  }
+
+  .team-action-button {
+    width: 105px; /* Default button size */
+    height: 60px;
+    font-size: 12px;
+  }
+
+  .team-action-button .fa-icon {
+    font-size: 20px;
+  }
 }

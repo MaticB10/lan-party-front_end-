@@ -1,6 +1,28 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
+  margin: 0;
+  padding: 0; /* Reset padding for consistency */
+  font-family: "Arial", sans-serif;
+  background-color: #ffffff; /* Default background */
+  color: #333333; /* Set a default text color for better readability */
+  line-height: 1.6; /* Improve text spacing for better legibility */
+  overflow-x: hidden; /* Prevent horizontal scrolling issues */
+}
+
+/* Responsive Typography for Body */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Smaller font size for phones */
   }
-  
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    font-size: 16px; /* Default font size for tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px; /* Larger font size for desktops */
+  }
+}

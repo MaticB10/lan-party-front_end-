@@ -1,32 +1,89 @@
 /* Footer.css */
-
 .footer {
   display: flex;
+  flex-direction: row; /* Default: horizontal layout */
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
+  padding: 20px 5vw; /* Flexible horizontal padding */
   background-color: transparent;
   color: #ffffff;
   font-family: "Poppins", sans-serif;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.contact-info {
+  margin-bottom: 10px; /* Add margin to separate sections on smaller screens */
 }
 
 .contact-info h3 {
-  font-size: 16px;
+  font-size: 1rem; /* Use relative units for flexibility */
   font-weight: 600;
   margin-bottom: 10px;
 }
 
 .contact-info p {
   margin: 5px 0;
-  font-size: 14px;
-  color: #9CABBB;
+  font-size: 0.875rem; /* Smaller text */
+  color: #9cabbb;
 }
 
 .sponsors {
   display: flex;
   gap: 15px;
+  flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+  justify-content: center; /* Center-align sponsors on small screens */
 }
 
 .sponsors img {
-  height: 40px;
+  height: 40px; /* Default size */
+  max-width: 100%; /* Ensure responsiveness */
 }
+
+/* Media Queries for Responsiveness */
+
+/* Small devices (phones) */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center-align items */
+    text-align: center; /* Center-align text */
+    padding: 20px; /* Adjust padding for smaller devices */
+  }
+
+  .contact-info h3 {
+    font-size: 0.9rem; /* Slightly smaller headings */
+  }
+
+  .contact-info p {
+    font-size: 0.8rem; /* Reduce paragraph size */
+  }
+
+  .sponsors {
+    gap: 10px; /* Reduce gap between sponsor logos */
+  }
+
+  .sponsors img {
+    height: 30px; /* Reduce logo size */
+  }
+}
+
+/* Medium devices (tablets) */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 20px 4vw; /* Moderate padding for tablets */
+  }
+
+  .contact-info h3 {
+    font-size: 0.95rem;
+  }
+
+  .contact-info p {
+    font-size: 0.85rem;
+  }
+
+  .sponsors img {
+    height: 35px; /* Slightly smaller logos */
+  }
+}
+
+

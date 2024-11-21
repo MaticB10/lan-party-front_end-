@@ -1,70 +1,147 @@
 /* Container */
+/* Container */
 .sponsors-container {
-    padding: 20px;
-    text-align: center;
-    color: #ffffff;
-  }
-  
+  padding: 5vh 5vw; /* Flexible padding for responsiveness */
+  text-align: center;
+  color: #ffffff;
+}
+
+.sponsors-title {
+  font-size: 2rem; /* Scalable title size */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Content */
+.sponsors-content {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  background: transparent; /* Set transparent background */
+}
+
+/* Navigation Buttons */
+.sponsor-nav {
+  font-size: 1.5rem; /* Scalable font size for buttons */
+  color: #ffffff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+}
+
+.sponsor-nav.left {
+  left: 10px;
+}
+
+.sponsor-nav.right {
+  right: 10px;
+}
+
+/* Sponsor Card */
+.sponsor-card {
+  flex: 1;
+  max-width: 90%; /* Flexible width for smaller screens */
+  margin: 10px; /* Spacing between cards */
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent background for cards */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsor-card:hover {
+  transform: scale(1.05); /* Slight scaling on hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Add subtle shadow on hover */
+}
+
+.sponsor-card h2 {
+  font-size: 1.125rem; /* Scalable heading size */
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.sponsor-card p {
+  font-size: 0.875rem; /* Scalable paragraph size */
+  color: #cccccc;
+}
+
+/* Logo */
+.sponsor-logo {
+  max-width: 80px; /* Flexible logo size */
+  margin-bottom: 10px;
+  transition: transform 0.3s ease; /* Smooth animation on hover */
+}
+
+.sponsor-logo:hover {
+  transform: scale(1.1); /* Slight scaling on logo hover */
+}
+
+/* Responsive Design */
+
+/* Small devices (phones) */
+@media (max-width: 768px) {
   .sponsors-title {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    font-size: 1.8rem; /* Adjust title size for smaller screens */
   }
-  
-  /* Content */
+
   .sponsors-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    padding: 40px;
-    position: relative;
-    background: transparent; /* Set transparent background */
-  }
-  
-  /* Navigation Buttons */
-  .sponsor-nav {
-    font-size: 24px;
-    color: #ffffff;
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-  }
-  
-  .sponsor-nav.left {
-    left: 10px;
-  }
-  
-  .sponsor-nav.right {
-    right: 10px;
-  }
-  
-  /* Sponsor Card */
-  .sponsor-card {
-    flex: 1;
-    max-width: 300px;
-    margin: 0 15px;
-    background: rgba(0, 0, 0, 0.4); /* Semi-transparent background for cards */
+    flex-wrap: wrap; /* Ensure cards wrap properly */
     padding: 20px;
-    border-radius: 10px;
-    text-align: center;
   }
-  
-  .sponsor-card h2 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
+
+  .sponsor-card {
+    max-width: 100%; /* Full-width cards for small screens */
   }
-  
-  .sponsor-card p {
-    font-size: 14px;
-    color: #cccccc;
-  }
-  
-  /* Logo */
+
   .sponsor-logo {
-    max-width: 100px;
-    margin-bottom: 10px;
+    max-width: 70px; /* Adjust logo size */
   }
-  
+
+  .sponsor-nav {
+    font-size: 1.25rem; /* Reduce navigation button size */
+  }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .sponsors-title {
+    font-size: 2rem; /* Default title size */
+  }
+
+  .sponsor-card {
+    max-width: 300px; /* Limit card size */
+  }
+
+  .sponsor-logo {
+    max-width: 90px; /* Default logo size */
+  }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 1024px) {
+  .sponsors-title {
+    font-size: 2.5rem; /* Larger title
+  size for desktops */
+}
+
+.sponsors-content {
+  padding: 40px; /* Maintain spacious padding */
+}
+
+.sponsor-card {
+  max-width: 300px; /* Fixed size for desktop cards */
+}
+
+.sponsor-logo {
+  max-width: 100px; /* Default logo size for desktops */
+}
+
+.sponsor-nav {
+  font-size: 1.5rem; /* Default navigation button size */
+}
+}

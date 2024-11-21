@@ -1,5 +1,4 @@
-/* App.css */
-
+/* General styles for app container */
 .app {
   display: flex;
   flex-direction: column;
@@ -11,118 +10,71 @@
   overflow: hidden;
 }
 
-/* Base structure for the gradient overlay */
+/* Gradient overlay (Base structure) */
 .gradient-overlay {
-  width: 1167.735px;
-  height: 922.536px;
+  width: 80vw; /* Use viewport width for flexibility */
+  height: 60vh; /* Use viewport height */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0.75;
-  filter: blur(175px);
+  filter: blur(15vw); /* Adjust blur based on screen size */
   pointer-events: none;
   z-index: 1;
 }
 
-/* Home (Dashboard) overlay */
-.home-overlay {
-  background: conic-gradient(
-    from 88deg at 37.93% 62.87%,
-    rgba(0, 111, 255, 0.65) 0deg,
-    rgba(255, 0, 229, 0.65) 360deg
-  );
-  transform: translate(-50%, -50%) rotate(22.745deg);
-}
-
-/* Login overlay */
-.login-overlay {
-  width: 867.735px;
-  height: 722.536px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(22.745deg);
-  background: conic-gradient(
-    from 88deg at 37.93% 62.87%,
-    rgba(0, 111, 255, 0.65) 0deg,
-    rgba(255, 0, 229, 0.65) 360deg
-  );
-  opacity: 0.75;
-  filter: blur(175px);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Register overlay specific styling */
-.register-overlay {
-  width: 1114.111px;
-  height: 908.571px;
-  transform: translate(-50%, -50%) rotate(-139.133deg);
-  background: conic-gradient(
-    from 88deg at 37.6% 56.82%,
-    rgba(0, 111, 255, 0.65) 0deg,
-    rgba(255, 0, 229, 0.65) 360deg
-  );
-  opacity: 0.75;
-  filter: blur(175px);
-}
-
-/* Team overlay */
-.team-overlay {
-  width: 1178px;
-  height: 527px;
-  opacity: 0.8;
-  background: conic-gradient(from 89deg at 100.96% 31.6%, #006FFF 0deg, #FF00E5 304.2deg);
-  filter: blur(60px);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 20px; /* Optional, if you need rounded corners */
-  z-index: -1; /* Make sure it stays in the background */
-}
-
-
-/* Sponsors Overlay */
-.sponsors-overlay {
-  width: 331.042px;
-  height: 420.949px;
-  transform: rotate(-70.393deg);
-  flex-shrink: 0;
-  border-radius: 420.949px;
-  opacity: 0.8;
-  background: conic-gradient(
-    from 88deg at 50% 50%,
-    rgba(255, 0, 229, 0.50) 0deg,
-    rgba(0, 111, 255, 0.50) 360deg
-  );
-  filter: blur(85px);
-  position: absolute; /* Adjust positioning as necessary */
-  top: 0; /* Adjust positioning to match your layout */
-  left: 650px; /* Adjust positioning to match your layout */
-}
-
-/* Blog overlay */
-.blog-overlay {
-  background: conic-gradient(
-    from 100deg at 45% 55%,
-    rgba(255, 20, 147, 0.65) 0deg,
-    rgba(30, 144, 255, 0.65) 360deg
-  );
-  transform: translate(-50%, -50%) rotate(30deg);
-}
-
-/* About overlay */
+/* Specific overlay styles */
+.home-overlay,
+.login-overlay,
+.register-overlay,
+.team-overlay,
+.sponsors-overlay,
+.blog-overlay,
 .about-overlay {
   background: conic-gradient(
-    from 100deg at 45% 55%,
-    rgba(255, 20, 147, 0.65) 0deg,
-    rgba(30, 144, 255, 0.65) 360deg
+    from 88deg at 50% 50%,
+    rgba(0, 111, 255, 0.65) 0deg,
+    rgba(255, 0, 229, 0.65) 360deg
   );
-  transform: translate(-50%, -50%) rotate(30deg);
+  opacity: 0.75;
+  filter: blur(15vw);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
+/* Adjust specific overlays */
+.login-overlay {
+  width: 70vw;
+  height: 50vh;
+}
+
+.register-overlay {
+  width: 75vw;
+  height: 55vh;
+}
+
+.team-overlay {
+  width: 80vw;
+  height: 40vh;
+  filter: blur(8vw);
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.sponsors-overlay {
+  width: 30vw;
+  height: 40vh;
+  border-radius: 50%;
+  left: 50%; /* Centered horizontally */
+  top: 10%;
+  filter: blur(8vw);
+}
+
+/* Main content styles */
 .main-content {
   flex: 1;
   display: flex;
@@ -133,7 +85,96 @@
 }
 
 .content-area {
-  width: 100%;
+  width: 90%;
   max-width: 1200px;
   padding: 20px;
+}
+
+/* Responsive Typography */
+body {
+  font-size: 16px; /* Default font size */
+}
+
+h1, h2, h3 {
+  font-size: 1.5em; /* Adjust as needed */
+}
+
+p {
+  font-size: 1em; /* Scale with root font size */
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small devices (phones) */
+@media (max-width: 768px) {
+  .gradient-overlay {
+    width: 90vw;
+    height: 70vh;
+    filter: blur(10vw);
+  }
+
+  .login-overlay,
+  .register-overlay,
+  .team-overlay {
+    width: 80vw;
+    height: 60vh;
+  }
+
+  .sponsors-overlay {
+    width: 50vw;
+    height: 30vh;
+    top: 15%;
+  }
+
+  .content-area {
+    padding: 15px;
+  }
+}
+
+/* Medium devices (tablets) */
+@media (max-width: 1024px) {
+  .gradient-overlay {
+    width: 85vw;
+    height: 65vh;
+  }
+
+  .login-overlay,
+  .register-overlay,
+  .team-overlay {
+    width: 75vw;
+    height: 55vh;
+  }
+
+  .sponsors-overlay {
+    width: 40vw;
+    height: 25vh;
+  }
+
+  .content-area {
+    padding: 20px;
+  }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 1025px) {
+  .gradient-overlay {
+    width: 75vw;
+    height: 55vh;
+  }
+
+  .login-overlay,
+  .register-overlay,
+  .team-overlay {
+    width: 70vw;
+    height: 50vh;
+  }
+
+  .sponsors-overlay {
+    width: 30vw;
+    height: 20vh;
+  }
+
+  .content-area {
+    max-width: 1200px;
+  }
 }

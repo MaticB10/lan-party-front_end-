@@ -1,63 +1,86 @@
 /* TebRegisterTeam.css */
-
 .register-team-container {
     display: flex;
+    flex-wrap: wrap; /* Enable wrapping for smaller screens */
     justify-content: space-between;
     align-items: flex-start;
     gap: 20px;
     padding: 20px;
     width: 100%;
-}
-
-.register-team-column {
+    max-width: 1200px; /* Limit the maximum width */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  /* Team Columns */
+  .register-team-column {
     display: flex;
     flex-direction: column;
     gap: 15px;
-}
-
-.register-team-column h1 {
-    font-size: 24px;
+    width: 100%; /* Full width for smaller devices */
+    max-width: 45%; /* Limit column width */
+  }
+  
+  .register-team-column h1 {
+    font-size: 1.5rem; /* Scalable heading size */
     font-weight: 700;
     color: #ffffff;
-}
-
-.register-team-column label {
-    font-size: 16px;
+  }
+  
+  .register-team-column label {
+    font-size: 1rem; /* Scalable label size */
     font-weight: 600;
     color: #ffffff;
-}
-
-.register-team-column input[type="text"],
-.register-team-column select {
+  }
+  
+  .register-team-column input[type="text"],
+  .register-team-column select {
     width: 100%;
     padding: 10px;
-    font-size: 16px;
+    font-size: 1rem; /* Scalable input font size */
     color: #333;
     background-color: #cecece;
     border: none;
     border-radius: 8px;
-}
-
-.team-members-list {
+    outline: none; /* Remove default outline */
+    transition: box-shadow 0.2s ease; /* Add focus effect */
+  }
+  
+  .register-team-column input[type="text"]:focus,
+  .register-team-column select:focus {
+    box-shadow: 0 0 5px rgba(73, 40, 106, 0.8);
+  }
+  
+  /* Team Members List */
+  .team-members-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    font-size: 16px;
+    font-size: 1rem; /* Scalable font size */
     font-weight: 700;
     color: #ffffff;
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-
-.team-members-list li {
+  }
+  
+  .team-members-list li {
     background-color: transparent;
-}
-
-.save-button {
-    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Add a subtle border */
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .team-members-list li:hover {
+    background-color: rgba(73, 40, 106, 0.8);
+    color: #ffffff;
+  }
+  
+  /* Save Button */
+  .save-button {
+    width: 100%; /* Full width for smaller screens */
     padding: 12px;
-    font-size: 16px;
+    font-size: 1rem; /* Scalable font size */
     font-weight: 700;
     color: #ffffff;
     background-color: rgba(73, 40, 106, 1);
@@ -65,4 +88,82 @@
     border-radius: 25px;
     cursor: pointer;
     text-align: center;
-}
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .save-button:hover {
+    background-color: rgba(55, 30, 86, 1); /* Darker shade on hover */
+    transform: scale(1.05); /* Slight scaling on hover */
+  }
+  
+  /* Responsive Design */
+  
+  /* Small devices (phones) */
+  @media (max-width: 768px) {
+    .register-team-container {
+      flex-direction: column; /* Stack columns vertically */
+      gap: 20px;
+      padding: 10px;
+    }
+  
+    .register-team-column {
+      max-width: 100%; /* Full width for columns */
+    }
+  
+    .register-team-column h1 {
+      font-size: 1.25rem; /* Reduce heading size for smaller screens */
+    }
+  
+    .register-team-column label {
+      font-size: 0.875rem; /* Adjust label size */
+    }
+  
+    .team-members-list {
+      font-size: 0.9rem; /* Reduce font size */
+    }
+  
+    .save-button {
+      font-size: 0.9rem; /* Reduce button size */
+    }
+  }
+  
+  /* Medium devices (tablets) */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .register-team-container {
+      flex-wrap: wrap; /* Allow wrapping if needed */
+      gap: 15px;
+    }
+  
+    .register-team-column {
+      max-width: 48%; /* Moderate column width */
+    }
+  
+    .register-team-column h1 {
+      font-size: 1.4rem; /* Adjust heading size */
+    }
+  }
+  
+  /* Large devices (desktops) */
+  @media (min-width: 1024px) {
+    .register-team-container {
+      gap: 20px; /* Maintain spacious layout */
+      padding: 20px 40px; /* Increase padding for larger screens */
+    }
+  
+    .register-team-column {
+      max-width: 45%; /* Limit column width for desktops */
+    }
+  
+    .register-team-column h1 {
+      font-size: 1.5rem; /* Larger headings for desktops */
+    }
+  
+    .team-members-list {
+      font-size: 1rem; /* Default font size for desktops */
+    }
+  
+    .save-button {
+      font-size: 1rem; /* Default button size */
+    }
+  }
+  

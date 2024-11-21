@@ -1,92 +1,153 @@
 /* Register.css */
 
 .register-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: transparent;
-    padding-top: 50px;
-    color: #ffffff;
-    font-family: "Poppins", sans-serif;
-    z-index: 2;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: transparent;
+  padding: 5vh 5vw; /* Flexible padding for responsiveness */
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  z-index: 2;
+  min-height: 100vh; /* Ensure full height */
+}
+
+.register-title {
+  font-size: 2.25rem; /* Scalable title size */
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  position: relative;
+  width: 90%; /* Flexible width for smaller screens */
+  max-width: 320px; /* Limit input width */
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input-group label {
+  font-size: 0.875rem; /* Scalable label font size */
+  color: #ffffff;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.input-icon-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-group input {
+  width: 100%;
+  height: 50px;
+  padding: 10px 40px 10px 15px; /* Adjust padding for icons */
+  font-size: 1rem; /* Scalable input font size */
+  border: none;
+  border-radius: 8px;
+  background-color: #cecece;
+  color: #333;
+  outline: none;
+}
+
+.input-icon {
+  position: absolute;
+  right: 15px; /* Position icon inside the input */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #333;
+  font-size: 1.125rem; /* Scalable icon size */
+}
+
+.register-button {
+  width: 90%; /* Flexible width for smaller screens */
+  max-width: 270px; /* Limit button width */
+  height: 45px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #4e0b7a, #7e27c9); /* Fix background gradient */
+  color: #ffffff;
+  font-size: 1rem; /* Scalable button font size */
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-text {
+  margin-top: 15px;
+  font-size: 0.875rem; /* Scalable text size */
+  color: #9CABBB;
+}
+
+.login-text a {
+  color: #FF00E5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+
+/* Small devices (phones) */
+@media (max-width: 768px) {
   .register-title {
-    font-size: 36px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 30px;
+    font-size: 1.8rem; /* Reduce title size for smaller screens */
   }
-  
+
   .input-group {
-    position: relative;
-    width: 320px;
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    width: 95%; /* Adjust input width for small screens */
   }
-  
-  .input-group label {
-    font-size: 14px;
-    color: #ffffff;
-    margin-bottom: 5px;
-    font-weight: 600;
-  }
-  
-  .input-icon-wrapper {
-    position: relative;
-    width: 100%;
-  }
-  
-  .input-group input {
-    width: 100%;
-    height: 50px;
-    padding: 10px 40px 10px 15px; /* Adjust padding for icons */
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    background-color: #cecece;
-    color: #333;
-    outline: none;
-  }
-  
-  .input-icon {
-    position: absolute;
-    right: 15px; /* Position icon inside the input */
-    top: 50%;
-    transform: translateY(-50%);
-    color: #333;
-    font-size: 18px;
-  }
-  
+
   .register-button {
-    width: 270px;
-    height: 45px;
-    border-radius: 25px;
-    background-color: linear-gradient(135deg, #4e0b7a, #7e27c9);
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 700;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin-top: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 95%; /* Buttons fill most of the screen */
   }
-  
+
   .login-text {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #9CABBB;
+    font-size: 0.8rem; /* Adjust font size */
   }
-  
-  .login-text a {
-    color: #FF00E5;
-    text-decoration: none;
-    font-weight: 500;
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .register-title {
+    font-size: 2rem; /* Slightly smaller title size for tablets */
   }
-  
+
+  .input-group {
+    width: 90%;
+  }
+
+  .register-button {
+    max-width: 270px; /* Maintain button size */
+  }
+
+  .login-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 1024px) {
+  .register-title {
+    font-size: 2.5rem; /* Larger title for desktops */
+  }
+
+  .input-group {
+    width: 320px; /* Fixed input width */
+  }
+
+  .register-button {
+    max-width: 270px; /* Default button size */
+  }
+
+  .login-text {
+    font-size: 1rem; /* Slightly larger text for desktops */
+  }
+}
