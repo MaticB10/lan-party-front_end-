@@ -1,137 +1,192 @@
-/* Home.css */
 .home-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: #040a11;
   color: #ffffff;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
-  padding: 40px 5vw; /* Flexible horizontal padding */
+  width: 100vw; /* Make sure it spans the full width of the viewport */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
   position: relative;
-  overflow: hidden;
 }
 
 .home-header {
+  position: relative;
   margin-bottom: 60px;
+  text-align: center;
+}
+
+.home-header .background-image {
+  position: absolute;
+  top: -150%;
+  left: 0%;
+  transform: translateX(-50%);
+  z-index: 0;
+  pointer-events: none;
+  width: 300px;
+  height: 300px;
 }
 
 .home-title {
-  font-size: 2.25rem; /* Scalable typography */
+  font-size: 2.5rem;
   font-weight: 700;
   color: #ffffff;
 }
 
 .info-section {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 400px;
   margin-bottom: 50px;
 }
 
 .info-box {
-  width: 90%; /* Full width with max limit */
-  max-width: 300px;
-  padding: 20px;
-  background: rgba(50, 0, 78, 0.8);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  text-align: left;
-}
-
-.info-box h2 {
-  font-size: 1.5rem; /* Scalable heading size */
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #ffffff;
-}
-
-.info-box p {
-  font-size: 0.875rem; /* Scalable body text */
-  font-weight: 400;
-  color: #ffffff;
-  margin: 5px 0;
-}
-
-.register-button {
-  width: 180px;
-  height: 45px;
+  position: relative;
+  width: 400px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem; /* Scalable button text */
-  font-weight: 700;
+  text-align: center;
+}
+
+.info-box .background-image {
+  position: absolute;
+  top: -25%;
+  left: -25%;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.info-box .foreground-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.info-box .foreground-box2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.info-box .info-content2 {
+  z-index: 2;
   color: #ffffff;
-  background: linear-gradient(135deg, #4e0b7a, #7e27c9);
+  text-align: left;
+}
+
+.info-kje-special {
+  position: relative;
+  width: 250px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  text-align: right;
+}
+
+.info-box h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+
+.info-box p {
+  font-size: 1.5rem;
+  margin: 10px 0px;
+  margin-left: 50px;
+}
+
+.login-button {
+  width: 300px;
+  height: 100px;
+  background: url('../image/Subtract-Prijava.png') no-repeat center center; /* Use the image */
+  background-size: cover; /* Ensure the image covers the button area */
   border: none;
   border-radius: 25px;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 4;
+}
+
+.login-button .background-image {
+  position: relative;
+  top: -100%;
+  top: -190%;
+  left: -65%;
+  height: 100%;
+  z-index: -1;
 }
 
 .register-button .arrow-icon {
   margin-left: 8px;
-  font-size: 1.125rem;
-  color: #ffffff;
 }
 
-/* Small devices (phones) */
 @media (max-width: 768px) {
+  .home-page {
+    padding: 10px; /* Add some padding to prevent content from touching edges */
+  }
+
   .home-title {
-    font-size: 1.8rem; /* Reduce title size for phones */
+    font-size: 1.8rem; /* Slightly smaller font size for titles */
+    text-align: center;
   }
 
   .info-section {
     flex-direction: column;
-    gap: 20px; /* Keep consistent spacing */
+    gap: 20px; /* Reduce gap between items */
+    align-items: center; /* Center-align for better presentation */
   }
 
   .info-box {
-    max-width: 90%; /* Ensure boxes fill smaller screens */
-  }
-
-  .register-button {
-    width: 160px; /* Smaller button width */
-    height: 40px;
-    font-size: 0.9rem; /* Adjust font size for buttons */
-  }
-}
-
-/* Medium devices (tablets) */
-@media (min-width: 768px) {
-  .info-section {
-    flex-direction: row; /* Switch to horizontal layout */
-    gap: 2rem; /* Flexible spacing between boxes */
-    justify-content: center; /* Center-align sections */
-  }
-
-  .info-box {
-    width: 250px; /* Adjusted size for tablets */
-  }
-}
-
-/* Large devices (desktops) */
-@media (min-width: 1024px) {
-  .home-title {
-    font-size: 3rem; /* Larger title for desktops */
-  }
-
-  .info-section {
-    gap: 3rem; /* Increase spacing between info boxes */
+    width: 90%; /* Make it responsive to screen size */
+    height: auto; /* Allow flexible height */
+    padding: 20px; /* Add some padding inside */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for better visual separation */
   }
 
   .info-box h2 {
-    font-size: 1.75rem; /* Larger headings */
+    font-size: 1.5rem; /* Adjust title size */
+    margin-left: 0; /* Align text properly for smaller boxes */
   }
 
   .info-box p {
-    font-size: 1rem; /* Slightly larger body text */
+    font-size: 1rem; /* Smaller text size for better readability */
+    margin-left: 0; /* Remove unnecessary margin */
+    text-align: center; /* Center-align text */
   }
 
-  .register-button {
-    width: 200px; /* Larger button size */
-    height: 50px;
-    font-size: 1.125rem; /* Larger font size */
+  .login-button {
+    width: 80%; /* Make button scale with screen */
+    max-width: 300px; /* Set a limit for button width */
+    height: 60px; /* Reduce height */
+    font-size: 1.2rem; /* Adjust font size */
+    margin: 10px auto; /* Center the button */
+    background-size: contain; /* Ensure the image fits nicely within the button */
+  }
+
+  .login-button .background-image {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure background fits button size */
+    height: 100%;
+    z-index: -1;
   }
 }
+

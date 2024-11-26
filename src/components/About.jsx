@@ -1,26 +1,41 @@
 import React from 'react';
+import '../styles/AboutUs.css';
 
 function Team() {
   return (
-    <div className="dashboard">
-      <div className="dashboard-title">
-        <h1>DOBRODOŠEL NA <br /> LAN PARTY</h1>
-      </div>
-      <div className="dashboard-sections">
-        <div className="dashboard-section">
-          <h2>KDAJ?</h2>
-          <p>Zadnji vikend februarja</p>
-          <p>Pričnemo ob 15:00 28.2.2025</p>
-          <p>Končamo ob 03:00 2.3.2025</p>
+    <main className="about-us-content">
+        <h2>O nas</h2>
+        <div className="about-us-sections">
+          <section className="about-us-section">
+            <h3>O nas</h3>
+            <p>
+              Smo ekipa dijakov 4. letnika na ŠCV ERŠ, ki nas druži strast do iger,
+              tehnologije in želja po ustvarjanju nepozabnih dogodkov za naše vrstnike...
+            </p>
+          </section>
+
+          <section className="about-us-section">
+            <h3>Naš cilj</h3>
+            <p>
+              Naš cilj je organizirati nepozaben dogodek, ki bo povezal ljubitelje iger in tehnologije iz naše šole...
+            </p>
+          </section>
+
+          <section className="about-us-section">
+            <h3>Ekipa</h3>
+            <p>
+              Za ta projekt smo združili moči, kjer vsak izmed nas prispeva svoj del...
+            </p>
+          </section>
+
+          <section className="about-us-section">
+            <h3>Podpora sponzorjev</h3>
+            <p>
+              Ta dogodek ne bi bil mogoč brez podpore naših sponzorjev...
+            </p>
+          </section>
         </div>
-        <div className="dashboard-section">
-          <h2>KJE?</h2>
-          <p>Šolski center Velenje</p>
-          <p>Restavracija Gaudeamus</p>
-          <p>Vodnikova cesta 2, 3320 Velenje</p>
-        </div>
-      </div>
-    </div>
+      </main>
   );
 }
 

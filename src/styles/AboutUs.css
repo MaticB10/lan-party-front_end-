@@ -1,0 +1,25 @@
+.about-us {
+    font-family: 'Arial', sans-serif;
+    color: white;
+    background: transparent;
+  }
+  
+  .about-us-content {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .about-us-sections {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .about-us-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  
