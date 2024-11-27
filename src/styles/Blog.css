@@ -1,0 +1,47 @@
+.blog-container {
+    text-align: center;
+    padding: 2rem 0;
+    color: #ffffff; /* Barva teksta znotraj komponente */
+  }
+  
+  .blog-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, #ffffff, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .blog-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .blog-card {
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    width: 300px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .blog-image {
+    background-color: #cccccc;
+    height: 200px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .blog-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+  
+  .blog-card-description {
+    color: #bbbbbb;
+    font-size: 0.9rem;
+  }
+  

@@ -1,27 +1,29 @@
-import React from 'react';
+import React from "react";
+import "../styles/Blog.css"; // Prepričaj se, da imaš pravilno pot do CSS datoteke
 
-function About() {
+function Blog() {
   return (
-    <div className="dashboard">
-      <div className="dashboard-title">
-        <h1>DOBRODOŠEL NA <br /> LAN PARTY</h1>
-      </div>
-      <div className="dashboard-sections">
-        <div className="dashboard-section">
-          <h2>KDAJ?</h2>
-          <p>Zadnji vikend februarja</p>
-          <p>Pričnemo ob 15:00 28.2.2025</p>
-          <p>Končamo ob 03:00 2.3.2025</p>
+    <div className="blog-container">
+      <h1 className="blog-title">Blog</h1>
+      <div className="blog-cards">
+        <div className="blog-card">
+          <div className="blog-image"></div>
+          <h2 className="blog-card-title">Title</h2>
+          <p className="blog-card-description">Description...</p>
         </div>
-        <div className="dashboard-section">
-          <h2>KJE?</h2>
-          <p>Šolski center Velenje</p>
-          <p>Restavracija Gaudeamus</p>
-          <p>Vodnikova cesta 2, 3320 Velenje</p>
+        <div className="blog-card">
+          <div className="blog-image"></div>
+          <h2 className="blog-card-title">Title</h2>
+          <p className="blog-card-description">Description...</p>
+        </div>
+        <div className="blog-card">
+          <div className="blog-image"></div>
+          <h2 className="blog-card-title">Title</h2>
+          <p className="blog-card-description">Description...</p>
         </div>
       </div>
     </div>
   );
 }
 
-export default About;
+export default Blog;
