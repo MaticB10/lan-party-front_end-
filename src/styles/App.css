@@ -27,7 +27,6 @@
 /* Specific overlay styles */
 .login-overlay,
 .register-overlay,
-.team-overlay,
 .sponsors-overlay,
 .blog-overlay,
 .about-overlay {
@@ -57,11 +56,17 @@
 }
 
 .team-overlay {
-  width: 80vw;
-  height: 40vh;
-  filter: blur(8vw);
-  border-radius: 20px;
-  z-index: -1;
+  width: 1278px;
+  height: 700px;
+  flex-shrink: 0;
+  opacity: 0.8;
+  background: var(--fill, conic-gradient(from 89deg at 100.96% 31.6%, #006FFF 0deg, #FF00E5 304.2deg));
+  filter: blur(60px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
 }
 
 .sponsors-overlay {

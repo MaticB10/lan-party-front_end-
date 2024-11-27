@@ -6,6 +6,7 @@ import TebTeam from './team/teb_team';
 import TebRegisterTeam from './team/teb_register_team';
 import TebLogin from './team/teb_login';
 import TebInfo from './team/teb_info';
+import subtract from '../image/subtract.png';
 import '../styles/Team.css';
 
 function Team() {
@@ -30,8 +31,10 @@ function Team() {
 
   return (
     <div className="team-page">
-      {/* Gradient Background Overlay */}
-      <div className="team-overlay"></div>
+      {/* Background Image */}
+      <div className="background-image">
+        <img className="subtract" alt="Subtract" src={subtract} />
+      </div>
 
       {/* Main Content Container */}
       <div className="team-content">

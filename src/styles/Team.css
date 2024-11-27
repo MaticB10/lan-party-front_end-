@@ -8,24 +8,19 @@
   font-family: "Poppins", sans-serif;
   color: #ffffff;
   overflow: hidden;
-  background: linear-gradient(180deg, #040a11, #1b0032); /* Updated background to match */
+  background: transparent; /* Updated background to match */
   padding: 0 5vw; /* Add padding for responsiveness */
 }
 
-/* Team Overlay Background */
-.team-overlay {
-  width: 90%; /* Flexible width for responsiveness */
-  max-width: 1200px;
-  height: auto;
-  padding: 30px;
-  background: linear-gradient(180deg, #2c003c, #1b0032);
-  border-radius: 20px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+/* Background Image */
+.team-page .background-image {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: -1;
+  width: 70%;  /* Adjust size of the image */
+  height: auto;
+  z-index: -1;  /* Make sure the image stays behind the content */
 }
 
 /* Content Container */
