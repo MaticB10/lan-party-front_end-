@@ -1,47 +1,137 @@
 .blog-container {
-    text-align: center;
-    padding: 2rem 0;
-    color: #ffffff; /* Barva teksta znotraj komponente */
-  }
-  
-  .blog-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    background: linear-gradient(90deg, #ffffff, #ffffff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .blog-cards {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-  }
-  
-  .blog-card {
-    background-color: #1c1c1c;
-    border-radius: 8px;
-    width: 300px;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-  }
-  
-  .blog-image {
-    background-color: #cccccc;
-    height: 200px;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-  }
-  
-  .blog-card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 0.5rem 0;
-  }
-  
-  .blog-card-description {
-    color: #bbbbbb;
-    font-size: 0.9rem;
-  }
-  
+  text-align: center;
+  padding: 2rem 0;
+  color: #ffffff; /* Barva teksta znotraj komponente */
+}
+
+.blog-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #ffffff, #ffffff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blog-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.blog-card {
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent background for cards */
+  border-radius: 8px;
+  width: 300px;
+  padding: 1rem;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Add subtle shadow on hover */
+  text-align: left;
+}
+
+.blog-image {
+  height: 200px;
+  width: 300px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.blog-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.blog-card-description {
+  color: #bbbbbb;
+  font-size: 0.9rem;
+}
+
+.blog-nav {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.blog-nav:disabled {
+  color: #555555;
+  cursor: not-allowed;
+}
+
+/* Details */
+.blog-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}
+
+.blog-detail-content {
+  max-width: 800px;
+  text-align: center;
+  color: white;
+  max-height: 80vh; /* Omeji višino na 80% višine zaslona */
+  overflow-y: auto; /* Omogoči pomikanje, če besedilo presega dovoljeno višino */
+  padding-right: 10px; /* Doda prostor za pomikanje */
+  scrollbar-width: thin; /* Ozka širina scrollbarja za bolj sodoben videz */
+  scrollbar-color: #888 #333; /* Barve scrollbarja (drsnik in ozadje) */
+}
+
+/* Za Webkit brskalnike (Chrome, Safari, Edge) */
+.blog-detail-content::-webkit-scrollbar {
+  width: 8px; /* Širina scrollbarja */
+}
+
+.blog-detail-content::-webkit-scrollbar-thumb {
+  background-color: #888; /* Barva drsnika */
+  border-radius: 10px; /* Zaobljeni robovi drsnika */
+  border: 2px solid #333; /* Rob okoli drsnika */
+}
+
+.blog-detail-content::-webkit-scrollbar-track {
+  background: #333; /* Barva ozadja scrollbarja */
+  border-radius: 10px;
+}
+
+.blog-detail-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  max-height: 500px; /* Večja slika */
+}
+
+.blog-detail-title {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+.blog-detail-description {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  white-space: pre-line; /* Omogoči prelom besedila in prikaže vse vrstice */
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2.5em;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #f00; /* Rdeča barva ob hoverju */
+}
