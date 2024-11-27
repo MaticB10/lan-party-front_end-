@@ -5,7 +5,7 @@ import { faInstagram, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import balix from '../image/balix-logo.png';
 import eigre from '../image/eigre-logo.png';
 import sasa from '../image/sasa-inkubator-logo.png';
-import uvi from '../image/UVI-logo.png';
+import itopica from '../image/it-opica.png';
 import snackKing from '../image/snac-king-logo.png';
 import '../styles/Footer.css';
 
@@ -28,7 +28,7 @@ function Footer() {
         <img src={balix} alt="Balix" />
         <img src={eigre} alt="Eigre" />
         <img src={sasa} alt="SASA Inkubator" />
-        <img src={uvi} alt="UVI" />
+        <img src={itopica} alt="itopica" />
         <img src={snackKing} alt="Snack King" />
       </div>
     </footer>
