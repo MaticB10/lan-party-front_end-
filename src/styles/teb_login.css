@@ -19,7 +19,6 @@
   max-width: 400px;
 }
 
-
 .team-name {
   font-size: 2.5rem; /* Večja velikost za ime */
   font-weight: bold;
@@ -29,10 +28,9 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Vsebina pod imenom */
 .content-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* Tri stolpci */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Prilagodljivi stolpci */
   grid-gap: 20px; /* Razmik med stolpci */
   width: 100%;
 }
@@ -45,7 +43,6 @@
   padding: 20px;
 }
 
-/* Gumb za shranjevanje */
 .button-section {
   margin-top: 20px;
   width: 100%;
@@ -113,4 +110,52 @@
 .main-content.disabled {
   pointer-events: none; /* Onemogoči vse interakcije */
   opacity: 0.5; /* Zatemni vsebino */
+}
+
+/* Media Queries za različne velikosti naprav */
+
+/* Za zelo majhne naprave (npr. mobilne) */
+@media (max-width: 576px) {
+  .team-name {
+    font-size: 1.5rem; /* Manjša velikost pisave */
+  }
+
+  .content-container {
+    grid-template-columns: 1fr; /* Samo en stolpec */
+  }
+
+  .save-button {
+    padding: 10px 20px; /* Manjši gumb */
+    font-size: 1rem;
+  }
+}
+
+/* Za tablice in srednje velike naprave */
+@media (max-width: 768px) {
+  .team-name {
+    font-size: 2rem;
+  }
+
+  .content-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .save-button {
+    padding: 12px 25px;
+  }
+}
+
+/* Za večje naprave (npr. namizne računalnike) */
+@media (min-width: 1200px) {
+  .login-container {
+    max-width: 1400px;
+  }
+
+  .team-name {
+    font-size: 3rem;
+  }
+
+  .save-button {
+    font-size: 1.5rem;
+  }
 }
