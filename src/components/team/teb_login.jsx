@@ -52,7 +52,7 @@ function TebLogin({ studentId }) {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                user_code: user?.user_code, // user_code prijavljenega uporabnika
+                user_code: user.user_code, // Uporabimo user_code za identifikacijo
                 participate,
                 tournament_name: tournamentName,
                 second_tournament_name: participate === 'yes' ? secondTournamentName : null,
@@ -60,19 +60,22 @@ function TebLogin({ studentId }) {
             }),
         });
 
+        const data = await response.json();
+
         if (!response.ok) {
-            const errorData = await response.json();
-            alert(`Napaka: ${errorData.message}`);
+            console.error('Napaka:', data.message);
+            alert(`Napaka: ${data.message}`);
             return;
         }
 
-        const data = await response.json();
-        alert(data.message);
+        alert(data.message); // Prikaži uspešno sporočilo glede na API
     } catch (error) {
-        console.error('Napaka pri prijavi:', error);
-        alert('Napaka pri prijavi.');
+        console.error('Napaka:', error);
+        alert('Prišlo je do napake pri shranjevanju ali posodabljanju podatkov.');
     }
 };
+
+
   
 
   return (
