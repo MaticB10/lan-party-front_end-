@@ -46,7 +46,7 @@ function Login() {
       {error && <p className="error-message">{error}</p>}
       
       <div className="input-group">
-        <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
+        <FontAwesomeIcon icon={faEnvelope} className="input-icon" data-unique="true"/>
         <input
           type="text"
           placeholder="Email"

@@ -107,6 +107,10 @@
     font-size: 0.9rem; /* Reduce font size */
   }
 
+  .header-user {
+    margin-top: 10px;
+  }
+
   .header-user a {
     top: 10px;
   }
