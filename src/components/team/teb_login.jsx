@@ -3,12 +3,13 @@ import '../../styles/teb_login.css';
 import { useAuth } from '../../contexts/AuthContext';
 
 function TebLogin({ studentId }) {
-  const { user } = useAuth(); // Dostop do prijavljenega uporabnika
-  const [participate, setParticipate] = useState('no'); // Privzeto stanje je "ne"
+  const { user } = useAuth();
+  const [participate, setParticipate] = useState('no');
   const [tournamentName, setTournamentName] = useState('');
-  const [secondTournamentName, setSecondTournamentName] = useState(''); // Nova izbira za drugi turnir
+  const [secondTournamentName, setSecondTournamentName] = useState('');
   const [slogan, setSlogan] = useState('');
   const [tournaments, setTournaments] = useState([]);
+  const [existingData, setExistingData] = useState(null); // Stanje za obstoječe podatke
 
   // Fetch tournaments from the server
   useEffect(() => {
@@ -19,7 +20,7 @@ function TebLogin({ studentId }) {
           const data = await response.json();
           setTournaments(data);
           if (data.length > 0) {
-            setTournamentName(data[0].name); // Set the first tournament as default
+            setTournamentName(data[0].name);
           }
         } else {
           console.error('Napaka pri pridobivanju turnirjev:', response.statusText);
@@ -32,63 +33,73 @@ function TebLogin({ studentId }) {
     fetchTournaments();
   }, []);
 
-  const handleModalResponse = (response) => {
-    setShowModal(false); // Skrij modal
-    if (response === 'yes') {
-      setIsEnabled(true); // Omogoči interakcije
-    } else {
-      setIsEnabled(false); // Onemogoči interakcije
-    }
-  };
+  // Fetch existing data from the server
+  useEffect(() => {
+    const fetchExistingData = async () => {
+      try {
+        const response = await fetch(`https://lanparty.scv.si/api/solo-tournament/${user.user_code}`);
+        if (response.ok) {
+          const data = await response.json();
+          setExistingData(data);
+          // Nastavi obstoječe vrednosti
+          setParticipate(data.participate);
+          setTournamentName(data.tournament_name);
+          setSecondTournamentName(data.second_tournament_name || '');
+          setSlogan(data.slogan || '');
+        } else if (response.status === 404) {
+          console.log('Ni obstoječih podatkov za uporabnika.');
+        } else {
+          console.error('Napaka pri pridobivanju podatkov:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Napaka pri pridobivanju podatkov:', error);
+      }
+    };
+
+    fetchExistingData();
+  }, [user.user_code]);
 
   const handleSubmit = async () => {
     if (!participate) {
-        alert('Prosim, izberi odgovor na vprašanje.');
-        return;
+      alert('Prosim, izberi odgovor na vprašanje.');
+      return;
     }
 
     try {
-        const response = await fetch('https://lanparty.scv.si/api/solo-tournament', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                user_code: user.user_code, // Uporabimo user_code za identifikacijo
-                participate,
-                tournament_name: tournamentName,
-                second_tournament_name: participate === 'yes' ? secondTournamentName : null,
-                slogan,
-            }),
-        });
+      const response = await fetch('https://lanparty.scv.si/api/solo-tournament', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          user_code: user.user_code,
+          participate,
+          tournament_name: tournamentName,
+          second_tournament_name: participate === 'yes' ? secondTournamentName : null,
+          slogan,
+        }),
+      });
 
-        const data = await response.json();
+      const data = await response.json();
 
-        if (!response.ok) {
-            console.error('Napaka:', data.message);
-            alert(`Napaka: ${data.message}`);
-            return;
-        }
+      if (!response.ok) {
+        console.error('Napaka:', data.message);
+        alert(`Napaka: ${data.message}`);
+        return;
+      }
 
-        alert(data.message); // Prikaži uspešno sporočilo glede na API
+      alert(data.message); // Prikaži uspešno sporočilo glede na API
     } catch (error) {
-        console.error('Napaka:', error);
-        alert('Prišlo je do napake pri shranjevanju ali posodabljanju podatkov.');
+      console.error('Napaka:', error);
+      alert('Prišlo je do napake pri shranjevanju ali posodabljanju podatkov.');
     }
-};
-
-
-  
+  };
 
   return (
     <div className="login-container">
-
-      
-      {/* Ime uporabnika na vrhu */}
       <div className="user-name">
         <h1 className="team-name">{user?.username || 'Uporabnik'}</h1>
       </div>
 
       <div className="content-container">
-        {/* Levi del: vprašanje in izbira */}
         <div className="login-section">
           <h2>Ali boš sodeloval v večjih turnirjih?</h2>
           <div className="radio-group">
@@ -97,6 +108,7 @@ function TebLogin({ studentId }) {
                 type="radio"
                 name="participate"
                 value="yes"
+                checked={participate === 'yes'}
                 onChange={(e) => setParticipate(e.target.value)}
               />
               Da
@@ -106,7 +118,7 @@ function TebLogin({ studentId }) {
                 type="radio"
                 name="participate"
                 value="no"
-                defaultChecked // Privzeto označeno
+                checked={participate === 'no'}
                 onChange={(e) => setParticipate(e.target.value)}
               />
               Ne
@@ -114,7 +126,6 @@ function TebLogin({ studentId }) {
           </div>
         </div>
 
-        {/* Srednji del: izbira turnirja */}
         <div className="tournament-selection">
           <label className="label-select">Izberi turnir:</label>
           <br />
@@ -131,7 +142,6 @@ function TebLogin({ studentId }) {
             ))}
           </select>
 
-          {/* Druga izbira, če je izbran "Da" */}
           {participate === 'yes' && (
             <>
               <label className="label-select">Izberi še drugi turnir:</label>
@@ -151,7 +161,6 @@ function TebLogin({ studentId }) {
           )}
         </div>
 
-        {/* Desni del: slogan */}
         <div className="slogan-section">
           <label className="input-label">Slogan (ni obvezno)</label>
           <input
@@ -164,7 +173,6 @@ function TebLogin({ studentId }) {
         </div>
       </div>
 
-      {/* Gumb za shranjevanje */}
       <div className="button-section">
         <button className="save-button" onClick={handleSubmit}>
           Shrani
