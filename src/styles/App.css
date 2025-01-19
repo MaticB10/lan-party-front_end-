@@ -21,7 +21,7 @@
   opacity: 0.75;
   filter: blur(15vw); /* Adjust blur based on screen size */
   pointer-events: none;
-  z-index: 1;
+  z-index: -1;
 }
 
 /* Specific overlay styles */
@@ -41,7 +41,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: -1;
 }
 
 /* Adjust specific overlays */

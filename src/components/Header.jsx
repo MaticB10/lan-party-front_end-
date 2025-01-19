@@ -5,8 +5,8 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { useAuth } from '../contexts/AuthContext';
 import '../styles/Header.css';
 
-function Header() {
-    const { user, logout } = useAuth(); // Access user and logout function from context
+function Header({ studentId }) {
+    const { user, logout } = useAuth();
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const navigate = useNavigate();
 
@@ -15,16 +15,16 @@ function Header() {
     };
 
     const handleLogout = () => {
-        logout(); // Clear user data and token
-        navigate('/login'); // Redirect to login page
+        logout();
+        navigate('/login');
     };
 
     return (
         <header className="header">
-            <div className="header-title">LAN PARTY 2024/2025</div>
+            <div className="header-title">
+                <Link to="/">LAN PARTY 2024/2025</Link>
+            </div>
             <nav className="header-nav">
-                <Link to="/">Doma</Link>
-                <span>|</span>
                 <Link to="/team">Ekipa</Link>
                 <span>|</span>
                 <Link to="/sponsors">Sponzorji</Link>
@@ -41,7 +41,7 @@ function Header() {
                         </span>
                         {isDropdownOpen && (
                             <div className="dropdown-menu">
-                                <Link to="/profile" className="dropdown-item">Profile</Link>
+                                <span className="dropdown-item">Vaša koda: {user.user_code}</span>
                                 <span onClick={handleLogout} className="dropdown-item">Logout</span>
                             </div>
                         )}

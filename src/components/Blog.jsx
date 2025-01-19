@@ -10,7 +10,7 @@ function Blog() {
 
   useEffect(() => {
     // Pridobi podatke iz API-ja
-    fetch("http://78.47.245.88:8081/blog")
+    fetch("https://lanparty.scv.si/api/blog")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Napaka pri pridobivanju podatkov.");

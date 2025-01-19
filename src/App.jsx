@@ -10,6 +10,7 @@ import Sponsors from './components/Sponsors';
 import Blog from './components/Blog';
 import About from './components/About';
 import Footer from './components/Footer';
+import Profil from './components/Dashboard';
 import ProtectedRoute from './contexts/ProtectedRoute'; // Import the ProtectedRoute component
 import './styles/App.css';
 

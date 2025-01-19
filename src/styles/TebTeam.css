@@ -92,6 +92,21 @@
     font-size: 0.9rem; /* Slightly smaller button size */
     padding: 8px 12px;
   }
+
+  .background-image img {
+    width: 105%;
+    height: 600px; /* Adjust height for smaller screens */
+  }
+
+  .team-page .background-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Adjust width for smaller screens */
+    height: auto;
+    z-index: -1;
+  }
 }
 
 /* Medium devices (tablets) */

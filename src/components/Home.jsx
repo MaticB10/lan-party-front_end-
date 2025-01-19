@@ -55,8 +55,8 @@ function Home() {
           </div>
         </div>
       </div>
-
-      {!user && (
+      <div className='test'>
+        {!user && (
         <Link to="/login">
           <button className="login-button">
             <p>PRIJAVI SE <span className="arrow-icon">→</span></p>
@@ -65,7 +65,10 @@ function Home() {
             </div>          
           </button>
         </Link>
-      )}
+        )}
+      </div>
+
+
     </div>
   );
 }

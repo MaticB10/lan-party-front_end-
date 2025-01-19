@@ -31,24 +31,16 @@ function Team() {
 
   return (
     <div className="team-page">
-      {/* Background Image */}
       <div className="background-image">
         <img className="subtract" alt="Subtract" src={subtract} />
       </div>
-
-      {/* Main Content Container */}
       <div className="team-content">
-        {/* Render Selected Tab Content */}
         <div className="team-tab-content">{renderContent()}</div>
-
-        {/* Action Buttons */}
         <div className="team-actions">
-          {/* Zavihek "Ekipa" je vedno viden */}
           <button className="team-action-button" onClick={() => setSelectedTab('team')}>
             <FontAwesomeIcon icon={faUsers} className="fa-icon" />
             <span>Ekipa</span>
           </button>
-          {/* Zavihka "Prijavi ekipo" in "Prijavi se" sta vidna samo prijavljenim uporabnikom */}
           {user && (
             <>
               <button className="team-action-button" onClick={() => setSelectedTab('registerTeam')}>
@@ -61,7 +53,6 @@ function Team() {
               </button>
             </>
           )}
-          {/* Zavihek "O dogodku" je vedno viden */}
           <button className="team-action-button" onClick={() => setSelectedTab('info')}>
             <FontAwesomeIcon icon={faInfoCircle} className="fa-icon" />
             <span>O dogodku</span>

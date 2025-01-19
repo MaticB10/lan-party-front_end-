@@ -11,11 +11,11 @@ function teb_info() {
           🎮 <strong>Pripravljeni na največji gaming dogodek leta!</strong> 🎮
         </p>
         <p>
-          V samo dveh dneh bomo gostili dva velika glavna turnirja in več manjših turnirjev, ki jih ne smete zamuditi! Pridruži se nam na Lan Partiju 2024 in pokaži svoje spretnosti v priljubljenih igrah!
+          V samo dveh dneh bomo gostili dva velika glavna turnirja in več manjših turnirjev, ki jih ne smete zamuditi! Pridruži se nam na Lan Partiju 2025 in pokaži svoje spretnosti v priljubljenih igrah!
         </p>
         <p>
-          <strong>Glavna turnirja:</strong> <span className="highlight">CSGO, Valorant</span><br />
-          <strong>Manjši turnirji:</strong> <span className="highlight">League of Legends, Rocket League, Apex Legends, Minecraft, Fall Guys</span>, in še več!
+          <strong>Glavna turnirja:</strong> <span className="highlight">CSGO, League of Legends</span><br />
+          <strong>Manjši turnirji:</strong> <span className="highlight">Rocket League, FC25, Fortnite</span>!
         </p>
       </div>
     </div>

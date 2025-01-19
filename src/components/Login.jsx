@@ -13,7 +13,7 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-        const response = await fetch('http://78.47.245.88:8081/login', {
+        const response = await fetch('https://lanparty.scv.si/api/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
@@ -30,7 +30,7 @@ function Login() {
         localStorage.setItem('token', data.token);
         setError('');
 
-        login({ username: data.data.username, surname: data.data.surname });
+        login(data.data);
     } catch (err) {
         console.error('Napaka pri prijavi:', err);
         setError('Prišlo je do napake. Poskusite znova.');
@@ -67,14 +67,6 @@ function Login() {
       
       <div className="button-group">
         <button className="button" onClick={handleLogin}>Prijava</button>
-        <div className="social-icons">
-          <button className="icon-button google-button">
-            <FontAwesomeIcon icon={faGoogle} />
-          </button>
-          <button className="icon-button discord-button">
-            <FontAwesomeIcon icon={faDiscord} />
-          </button>
-        </div>
       </div>
       
       <p className="register-text">

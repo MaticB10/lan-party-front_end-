@@ -9,19 +9,17 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
 
-    // Funkcija za prijavo uporabnika
     const login = (userData) => {
+        console.log('User data on login:', userData); // Debugging
         setUser(userData);
         localStorage.setItem('user', JSON.stringify(userData));
     };
 
-    // Funkcija za odjavo uporabnika
     const logout = () => {
         setUser(null);
         localStorage.removeItem('user');
     };
 
-    // Ob zagonu aplikacije preverimo, ali je uporabnik že prijavljen
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
         if (storedUser) {

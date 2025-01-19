@@ -8,7 +8,7 @@ function TebTeam() {
 
   // Pridobivanje podatkov z API-ja
   useEffect(() => {
-    fetch('http://78.47.245.88:8081/teams')
+    fetch('https://lanparty.scv.si/api/teams')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Napaka pri pridobivanju podatkov');

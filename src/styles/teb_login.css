@@ -1,184 +1,116 @@
 .login-container {
   display: flex;
-  flex-direction: column; /* Default to column layout for smaller screens */
-  align-items: center; /* Center-align items on smaller screens */
-  justify-content: center;
-  padding: 20px 5vw; /* Flexible padding for responsiveness */
+  flex-direction: column;
+  align-items: center; /* Center poravnava */
+  padding: 10px;
+  max-width: 1100px;
   color: #ffffff;
   font-family: "Poppins", sans-serif;
 }
 
-/* Login Sections */
-.login-section, 
-.login-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Default alignment */
-  width: 100%; /* Full width for small devices */
-  max-width: 600px; /* Limit width on larger screens */
-  margin-bottom: 20px;
-}
-
-h2 {
-  font-size: 1.5rem; /* Scalable font size */
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-/* Radio Group */
-.radio-group {
-  display: flex;
-  flex-wrap: wrap; /* Wrap radio options on smaller screens */
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.radio-group label {
-  font-weight: 500;
-  color: #ffffff;
-}
-
-/* Select Dropdown */
-.label-select {
-  font-size: 0.875rem; /* Scalable label font size */
-  font-weight: 500;
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-
 .tournament-select {
+  margin-top: 10px;
   padding: 10px;
-  font-size: 1rem; /* Scalable input font size */
+  font-size: 1rem;
   color: #333;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
-  width: 100%; /* Full width for smaller devices */
-  max-width: 300px; /* Limit width for larger devices */
+  width: 100%;
+  max-width: 400px;
 }
 
-/* Team Name */
+
 .team-name {
-  font-size: 1.75rem; /* Scalable font size */
-  font-weight: 700;
+  font-size: 2.5rem; /* Večja velikost za ime */
+  font-weight: bold;
   color: #ffffff;
-  margin-bottom: 20px;
+  text-align: center;
+  padding: 10px 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Input Label and Field */
-.input-label {
-  font-size: 0.875rem; /* Scalable label font size */
-  font-weight: 500;
-  margin-bottom: 5px;
+/* Vsebina pod imenom */
+.content-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Tri stolpci */
+  grid-gap: 20px; /* Razmik med stolpci */
+  width: 100%;
 }
 
-.input-field {
-  background-color: #cecece;
-  color: #333;
-  padding: 8px;
-  font-size: 1rem; /* Scalable input font size */
-  border: none;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  width: 100%; /* Full width for smaller devices */
-  max-width: 300px; /* Limit width for larger devices */
+.login-section,
+.tournament-selection,
+.slogan-section {
+  border-radius: 10px;
+  margin-left: 10px;
+  padding: 20px;
 }
 
-/* Save Button */
+/* Gumb za shranjevanje */
+.button-section {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
 .save-button {
   background-color: #6c3a9b;
+  position: center;
+  margin-left: 25px;
   color: #ffffff;
-  font-size: 1rem; /* Scalable button font size */
-  font-weight: 600;
-  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px 30px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  align-self: flex-start; /* Align button to the start of the form */
-  margin-top: 20px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 .save-button:hover {
-  background-color: #5a3085; /* Darker shade on hover */
-  transform: scale(1.05); /* Slight scaling effect */
+  background-color: #5a3085;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive Design */
-
-/* Small devices (phones) */
-@media (max-width: 768px) {
-  .login-container {
-    padding: 20px;
-  }
-
-  .login-section, 
-  .login-info {
-    width: 100%; /* Full width for smaller screens */
-    max-width: none; /* Remove width restriction */
-    align-items: center; /* Center-align content */
-  }
-
-  h2 {
-    font-size: 1.25rem; /* Reduce heading size for smaller screens */
-  }
-
-  .tournament-select, 
-  .input-field {
-    width: 100%; /* Full width for inputs and dropdowns */
-  }
-
-  .save-button {
-    align-self: center; /* Center-align button */
-  }
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Temno ozadje */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-/* Medium devices (tablets) */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .login-container {
-    flex-direction: row; /* Row layout for tablets */
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  .login-section, 
-  .login-info {
-    max-width: 400px; /* Moderate width for tablet screens */
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  .tournament-select, 
-  .input-field {
-    width: 100%; /* Maintain full width */
-    max-width: 400px; /* Limit input width */
-  }
-
-  .save-button {
-    align-self: flex-start; /* Keep button alignment */
-  }
+.modal {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
 }
 
-/* Large devices (desktops) */
-@media (min-width: 1024px) {
-  .login-container {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+.modal h2 {
+  margin-bottom: 20px;
+}
 
-  .login-section, 
-  .login-info {
-    max-width: 500px; /* Wider sections for desktops */
-  }
+.modal button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
 
-  h2 {
-    font-size: 1.75rem; /* Larger headings */
-  }
+.modal button:hover {
+  background-color: #e0e0e0;
+}
 
-  .tournament-select, 
-  .input-field {
-    max-width: 400px; /* Maintain width for large screens */
-  }
+.main-content.disabled {
+  pointer-events: none; /* Onemogoči vse interakcije */
+  opacity: 0.5; /* Zatemni vsebino */
 }
