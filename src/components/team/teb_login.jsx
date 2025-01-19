@@ -14,7 +14,7 @@ function TebLogin({ studentId }) {
   useEffect(() => {
     const fetchTournaments = async () => {
       try {
-        const response = await fetch('https://lanparty.scv.si/api/tournaments');
+        const response = await fetch('https://lanparty.scv.si/api/sol_tournaments');
         if (response.ok) {
           const data = await response.json();
           setTournaments(data);
