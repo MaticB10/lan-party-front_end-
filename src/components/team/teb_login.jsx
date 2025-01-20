@@ -93,6 +93,38 @@ function TebLogin({ studentId }) {
     }
   };
 
+  const handleOdjava = async () => {
+    if (!window.confirm('Ali ste prepričani, da se želite odjaviti iz turnirja?')) return;
+
+    try {
+        const response = await fetch(`https://lanparty.scv.si/api/solo-tournament/${user.user_code}`, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            console.error('Napaka:', data.message);
+            alert(`Napaka: ${data.message}`);
+            return;
+        }
+
+        // Počisti podatke po uspešni odjavi
+        setParticipate('no');
+        setTournamentName('');
+        setSecondTournamentName('');
+        setSlogan('');
+        setExistingData(null);
+
+        alert(data.message);
+    } catch (error) {
+        console.error('Napaka pri odjavi:', error);
+        alert('Prišlo je do napake pri odjavi iz turnirja.');
+    }
+};
+
+
   return (
     <div className="login-container">
       <div className="user-name">
@@ -176,6 +208,9 @@ function TebLogin({ studentId }) {
       <div className="button-section">
         <button className="save-button" onClick={handleSubmit}>
           Shrani
+        </button>
+        <button className="save-button" onClick={handleOdjava}>
+          Odjavi iz turnerja
         </button>
       </div>
     </div>
