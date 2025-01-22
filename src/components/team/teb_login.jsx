@@ -196,7 +196,7 @@ function TebLogin({ studentId }) {
         <div className="slogan-section">
           <label className="input-label">Slogan (ni obvezno)</label>
           <input
-            type="text"
+            type="register-text"
             className="input-field"
             placeholder="Calm under pressure"
             value={slogan}

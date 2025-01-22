@@ -60,7 +60,7 @@ function Home() {
         <Link to="/login">
           <button className="login-button">
             <p>PRIJAVI SE <span className="arrow-icon">→</span></p>
-            <div className="background-image">
+            <div className="">
               <img src={prijava_bg} alt="Background Ellipse" />
             </div>          
           </button>

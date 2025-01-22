@@ -141,6 +141,34 @@ function TebRegisterTeam() {
     }
   };
 
+  const handleRemoveMember = async (memberKey, memberCode) => {
+    if (!window.confirm('Ali res želite izbrisati tega člana iz ekipe?')) return;
+  
+    try {
+      const response = await fetch(`https://lanparty.scv.si/api/remove-team-member/${teamId}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ memberCode, requesterCode: user.user_code }), // Dodaj requesterCode
+      });
+  
+      const data = await response.json();
+  
+      if (!response.ok) {
+        alert(`Napaka: ${data.message}`);
+        return;
+      }
+  
+      alert(data.message);
+      setTeam((prev) => ({
+        ...prev,
+        [memberKey]: null,
+      }));
+    } catch (error) {
+      console.error('Napaka pri odstranjevanju člana:', error);
+      alert('Napaka pri odstranjevanju člana.');
+    }
+  };
+
   const handleDeleteTeam = async () => {
     if (!window.confirm('Ali res želite izbrisati to ekipo? Ta operacija je nepovratna.')) return;
 
@@ -237,7 +265,7 @@ function TebRegisterTeam() {
             <div className="add-member">
               <h3>Dodaj novega člana</h3>
               <input
-                type="text"
+                type="register-text"
                 placeholder="Vnesite kodo člana"
                 value={memberCode}
                 onChange={(e) => setMemberCode(e.target.value)}

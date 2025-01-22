@@ -8,7 +8,7 @@
   padding: 5vh 5vw; /* Flexible padding for responsiveness */
   color: #ffffff;
   font-family: "Poppins", sans-serif;
-  min-height: 100vh; /* Ensure full height on all screens */
+  min-height: 10vh; /* Ensure full height on all screens */
 }
 
 .title {
@@ -45,9 +45,6 @@
   color: #333;
 }
 
-.input-icon[data-unique="true"] {
-  padding-bottom: 20px;
-}
 
 .button-group {
   display: flex;
