@@ -1,147 +1,193 @@
-/* Container */
-/* Container */
+/* ========== IMPORT CUSTOM FONT (OPTIONAL) ========== */
+/* Example of a distinctive heading font (Orbitron). Uncomment if desired.
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+*/
+
+/* ========== BASE STYLES (MOBILE FIRST) ========== */
 .sponsors-container {
-  padding: 5vh 5vw; /* Flexible padding for responsiveness */
-  text-align: center;
+  padding: 5vh 5vw;
   color: #ffffff;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background: transparent;
+  overflow: hidden; /* Ensure overflow doesn't show during animations */
 }
 
 .sponsors-title {
-  font-size: 2rem; /* Scalable title size */
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
-/* Content */
-.sponsors-content {
-  display: flex;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  align-items: center;
-  justify-content: center;
-  border-radius: 20px;
-  padding: 40px;
-  position: relative;
-  background: transparent; /* Set transparent background */
+.sponsors-subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Navigation Buttons */
-.sponsor-nav {
-  font-size: 1.5rem; /* Scalable font size for buttons */
-  color: #ffffff;
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: absolute;
+/* Single-column grid by default (phones) */
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.sponsor-nav.left {
-  left: 10px;
-}
-
-.sponsor-nav.right {
-  right: 10px;
-}
-
-/* Sponsor Card */
 .sponsor-card {
-  flex: 1;
-  max-width: 90%; /* Flexible width for smaller screens */
-  margin: 10px; /* Spacing between cards */
-  background: rgba(0, 0, 0, 0.4); /* Semi-transparent background for cards */
-  padding: 20px;
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-decoration: none;
+  color: inherit;
+
+  /* Subtle gradient + slight blur behind */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.07),
+    rgba(255, 255, 255, 0.02)
+  );
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  padding: 1.5rem;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  /* Hover overlay (border accent) */
+  border: 1px solid transparent;
+  transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+
+  /* Entrance animation */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .sponsor-card:hover {
-  transform: scale(1.05); /* Slight scaling on hover */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Add subtle shadow on hover */
+  border: 1px solid #661ce7; /* Accent border color on hover */
+  box-shadow: 0 8px 18px rgba(102, 28, 231, 0.4);
+  transform: translateY(-4px);
 }
 
-.sponsor-card h2 {
-  font-size: 1.125rem; /* Scalable heading size */
-  font-weight: bold;
-  margin-top: 10px;
+/* Pressed/active state for click feedback */
+.sponsor-card:active {
+  transform: scale(0.97);
 }
 
-.sponsor-card p {
-  font-size: 0.875rem; /* Scalable paragraph size */
-  color: #cccccc;
-}
-
-/* Logo */
+/* Sponsor logo up top */
 .sponsor-logo {
-  max-width: 80px; /* Flexible logo size */
-  margin-bottom: 10px;
-  transition: transform 0.3s ease; /* Smooth animation on hover */
+  max-width: 100px;
+  max-height: 100px;
+  margin: 0 auto 1rem;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 .sponsor-logo:hover {
-  transform: scale(1.1); /* Slight scaling on logo hover */
+  transform: scale(1.05);
 }
 
-/* Responsive Design */
+.sponsor-card h2 {
+  /* font-family: 'Orbitron', sans-serif; */
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
 
-/* Small devices (phones) */
-@media (max-width: 768px) {
+/* Description text */
+.sponsor-description {
+  font-size: 0.9rem;
+  color: #cccccc;
+  line-height: 1.4;
+}
+
+/* ========== CTA AT BOTTOM ========== */
+.sponsors-cta {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Example CTA button styling */
+.cta-button {
+  background: #661ce7;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 24px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #7d34f0;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* TABLETS (>=768px and <1024px): auto-fit columns if room allows */
+@media (min-width: 768px) and (max-width: 1023px) {
   .sponsors-title {
-    font-size: 1.8rem; /* Adjust title size for smaller screens */
+    font-size: 2rem;
   }
 
-  .sponsors-content {
-    flex-wrap: wrap; /* Ensure cards wrap properly */
-    padding: 20px;
+  .sponsor-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 900px;
   }
 
   .sponsor-card {
-    max-width: 100%; /* Full-width cards for small screens */
+    padding: 1.5rem 1rem;
+  }
+
+  .sponsor-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .sponsor-description {
+    font-size: 0.95rem;
   }
 
   .sponsor-logo {
-    max-width: 70px; /* Adjust logo size */
-  }
-
-  .sponsor-nav {
-    font-size: 1.25rem; /* Reduce navigation button size */
+    max-width: 120px;
+    max-height: 120px;
   }
 }
 
-/* Medium devices (tablets) */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .sponsors-title {
-    font-size: 2rem; /* Default title size */
-  }
-
-  .sponsor-card {
-    max-width: 300px; /* Limit card size */
-  }
-
-  .sponsor-logo {
-    max-width: 90px; /* Default logo size */
-  }
-}
-
-/* Large devices (desktops) */
+/* DESKTOP (>=1024px): exactly 3 columns */
 @media (min-width: 1024px) {
-  .sponsors-title {
-    font-size: 2.5rem; /* Larger title
-  size for desktops */
-}
+  .sponsor-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+  }
 
-.sponsors-content {
-  padding: 40px; /* Maintain spacious padding */
-}
+  .sponsor-card {
+    padding: 2rem 1.5rem;
+  }
 
-.sponsor-card {
-  max-width: 300px; /* Fixed size for desktop cards */
-}
+  .sponsor-card h2 {
+    font-size: 1.3rem;
+  }
 
-.sponsor-logo {
-  max-width: 100px; /* Default logo size for desktops */
-}
+  .sponsor-description {
+    font-size: 1rem;
+  }
 
-.sponsor-nav {
-  font-size: 1.5rem; /* Default navigation button size */
-}
+  .sponsor-logo {
+    max-width: 140px;
+    max-height: 140px;
+  }
 }

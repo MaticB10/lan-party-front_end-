@@ -270,7 +270,7 @@ function TebRegisterTeam() {
                 value={memberCode}
                 onChange={(e) => setMemberCode(e.target.value)}
               />
-              <button onClick={handleAddMember}>Dodaj</button>
+              <button className='team-button' onClick={handleAddMember}>Dodaj</button>
             </div>
           )}
 

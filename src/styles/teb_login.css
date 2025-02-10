@@ -50,7 +50,8 @@
 }
 
 .save-button {
-  background-color: #6c3a9b;
+  background: linear-gradient(135deg, #6a008a, #4a148c);
+  box-shadow: 0 0 10px rgba(106,0,138,0.5);
   position: center;
   margin-left: 25px;
   color: #ffffff;
@@ -64,9 +65,9 @@
 }
 
 .save-button:hover {
-  background-color: #5a3085;
+  background: linear-gradient(135deg, #6a008a, #4a148c);
+  box-shadow: 0 0 10px rgba(106,0,138,0.5);
   transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .modal-overlay {
@@ -104,7 +105,8 @@
 }
 
 .modal button:hover {
-  background-color: #e0e0e0;
+  background: linear-gradient(135deg, #6a008a, #4a148c);
+  box-shadow: 0 0 10px rgba(106,0,138,0.5);
 }
 
 .main-content.disabled {

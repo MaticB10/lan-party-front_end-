@@ -140,7 +140,7 @@ input[type="register-text"] {
 }
 
 .modal {
-  background: linear-gradient(145deg, #3e035a, #290b48); /* Barve ozadja, skladne z glavno temo */
+  background: linear-gradient(145deg, #3e035a, #290b48), rgba(255, 255, 255, 0.05);
   color: #ffffff;
   border-radius: 15px;
   padding: 30px;
@@ -177,7 +177,8 @@ input[type="register-text"] {
 }
 
 .modal button {
-  background-color: #6c3a9b;
+  background: linear-gradient(135deg, #6a008a, #4a148c);
+  box-shadow: 0 0 10px rgba(106,0,138,0.5);
   color: white;
   padding: 10px 20px;
   font-size: 1rem;
@@ -188,7 +189,8 @@ input[type="register-text"] {
 }
 
 .modal button:hover {
-  background-color: #5a3085;
+  background: linear-gradient(135deg, #6a008a, #4a148c);
+  box-shadow: 0 0 10px rgba(106,0,138,0.5);
   transform: scale(1.05);
 }
 

@@ -24,7 +24,7 @@ function Register() {
       const response = await axios.post('https://lanparty.scv.si/api/register', formData);
       setMessage(response.data.message);
       
-      // Po uspešni registraciji ponastavi polja za vnos
+      // Reset form fields after successful registration
       setFormData({
         username: '',
         surname: '',
@@ -38,42 +38,66 @@ function Register() {
 
   return (
     <div className="register-page">
-      <h1 className="register-title">Registracija</h1>
-
-      <form onSubmit={handleSubmit}>
-        <div className="input-group">
-          <label>Ime</label>
-          <input type="text" name="username" placeholder="Ime" value={formData.username} onChange={handleChange} required />
-        </div>
-
-        <div className="input-group">
-          <label>Priimek</label>
-          <input type="text" name="surname" placeholder="Priimek" value={formData.surname} onChange={handleChange} required />
-        </div>
-
-        <div className="input-group">
-          <label>Email</label>
-          <div className="input-icon-wrapper">
-            <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
-            <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
+      <div className="register-card">
+        <h1 className="register-title">Registracija</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <label>Ime</label>
+            <input
+              type="text"
+              name="username"
+              placeholder="Ime"
+              value={formData.username}
+              onChange={handleChange}
+              required
+            />
           </div>
-        </div>
-
-        <div className="input-group">
-          <label>Geslo</label>
-          <div className="input-icon-wrapper">
-            <input type="password" name="password" placeholder="Geslo" value={formData.password} onChange={handleChange} required />
-            <FontAwesomeIcon icon={faLock} className="input-icon" />
+          <div className="input-group">
+            <label>Priimek</label>
+            <input
+              type="text"
+              name="surname"
+              placeholder="Priimek"
+              value={formData.surname}
+              onChange={handleChange}
+              required
+            />
           </div>
-        </div>
-
-        <button type="submit" className="register-button">Registriraj se</button>
-        {message && <p className="message">{message}</p>}
-      </form>
-
-      <p className="login-text">
-        Že imate račun? <a href="/login">Prijavite se.</a>
-      </p>
+          <div className="input-group">
+            <label>Email</label>
+            <div className="input-icon-wrapper">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <FontAwesomeIcon icon={faEnvelope} className="input-icon" />
+            </div>
+          </div>
+          <div className="input-group">
+            <label>Geslo</label>
+            <div className="input-icon-wrapper">
+              <input
+                type="password"
+                name="password"
+                placeholder="Geslo"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+              <FontAwesomeIcon icon={faLock} className="input-icon" />
+            </div>
+          </div>
+          <button type="submit" className="register-button">Registriraj se</button>
+          {message && <p className="message">{message}</p>}
+        </form>
+        <p className="login-text">
+          Že imate račun? <a href="/login">Prijavite se.</a>
+        </p>
+      </div>
     </div>
   );
 }

@@ -82,13 +82,6 @@ function Blog() {
         <div>
           <h1 className="blog-title">Blog</h1>
           <div className="blog-cards">
-            <button
-              className="blog-nav left"
-              onClick={handlePrev}
-              disabled={currentIndex === 0}
-            >
-              <FontAwesomeIcon icon={faChevronLeft} />
-            </button>
 
             {visibleBlog.map((blogItem) => (
               <div
@@ -111,14 +104,6 @@ function Blog() {
                 </p>
               </div>
             ))}
-
-            <button
-              className="blog-nav right"
-              onClick={handleNext}
-              disabled={currentIndex + 3 >= blog.length}
-            >
-              <FontAwesomeIcon icon={faChevronRight} />
-            </button>
           </div>
         </div>
       )}

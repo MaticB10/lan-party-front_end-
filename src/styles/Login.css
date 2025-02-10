@@ -1,37 +1,77 @@
-/* Login.css */
+/* ========= Global Variables ========= */
+:root {
+  --primary-color: #ffffff;
+  --accent-color: #ff6f61;
+  --background-color: #0b0b10;
+  --card-bg: #1c1f24;
+  --text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  --transition-speed: 0.3s;
+  --border-radius: 1rem;
+  --box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  --max-content-width: 1200px;
+}
+
+/* ========= Reset ========= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========= Body Styling ========= */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at 30% 30%, #14151c, var(--background-color) 60%);
+  color: var(--primary-color);
+  min-height: 100vh;
+}
+
+/* ========= Login Page Container ========= */
 .login-page {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  padding: 5vh 5vw;
+}
+
+/* ========= Login Card ========= */
+.login-card {
+  background: var(--card-bg);
+  padding: 2rem 3rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
   text-align: center;
-  background-color: transparent;
-  padding: 5vh 5vw; /* Flexible padding for responsiveness */
-  color: #ffffff;
-  font-family: "Poppins", sans-serif;
-  min-height: 10vh; /* Ensure full height on all screens */
+  max-width: 400px;
+  width: 100%;
 }
 
-.title {
-  font-size: 2rem; /* Use scalable font size */
+/* ========= Title ========= */
+.login-title {
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 30px;
-  color: #ffffff;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  text-shadow: var(--text-shadow);
 }
 
+/* ========= Error Message ========= */
+.error-message {
+  color: #ff6f61;
+  margin-bottom: 1rem;
+}
+
+/* ========= Input Groups ========= */
 .input-group {
   position: relative;
-  width: 90%; /* Flexible width for smaller screens */
-  max-width: 320px; /* Limit input width */
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
 .input-group input {
   width: 100%;
   height: 50px;
-  padding: 10px 0px 10px 15px;
-  font-size: 1rem; /* Scalable font size */
+  padding: 0 50px 0 15px;
+  font-size: 1rem;
   border: none;
   border-radius: 8px;
   background-color: #cecece;
@@ -42,37 +82,53 @@
 .input-icon {
   position: absolute;
   right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
   color: #333;
 }
 
-
+/* ========= Button Group ========= */
 .button-group {
-  display: flex;
-  align-items: center;
-  margin-top: 15px;
-  flex-direction: column; /* Stack buttons on small screens */
+  margin-top: 1rem;
 }
 
-.button {
-  width: 220px;
+.login-button {
+  width: 100%;
   height: 45px;
   border-radius: 25px;
-  background-color: rgba(73, 40, 106, 1);
-  color: #ffffff;
-  font-size: 1rem; /* Scalable font size */
+  background: linear-gradient(135deg, #6a008a, #4a148c);
+  color: var(--primary-color);
+  font-size: 1rem;
   font-weight: 700;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
   cursor: pointer;
-  margin-bottom: 10px; /* Add spacing between buttons */
+  box-shadow: 0 0 10px rgba(106,0,138,0.5);
+  transition: transform var(--transition-speed);
 }
 
+.login-button:hover {
+  transform: translateY(-3px);
+}
+
+/* ========= Register Text ========= */
+.register-text {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #9cabbb;
+}
+
+.register-text a {
+  color: #ff00e5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ========= Social Icons ========= */
 .social-icons {
   display: flex;
+  justify-content: center;
   gap: 10px;
-  margin-top: 15px;
+  margin-top: 1.5rem;
 }
 
 .icon-button {
@@ -83,13 +139,13 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  font-size: 1.125rem; /* Scalable icon size */
+  font-size: 1.125rem;
   border: none;
 }
 
 .google-button {
   background-color: #ffffff;
-  color: #db4437; /* Google brand color */
+  color: #db4437;
 }
 
 .discord-button {
@@ -97,67 +153,23 @@
   color: #ffffff;
 }
 
-.register-text {
-  margin-top: 15px;
-  font-size: 0.875rem; /* Scalable font size */
-  color: #9cabbb;
-}
-
-.register-text a {
-  color: #ff00e5;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-/* Responsive Design */
-
-/* Small devices (phones) */
+/* ========= Responsive Design ========= */
 @media (max-width: 768px) {
-  .title {
-    font-size: 1.5rem; /* Reduce title size for smaller screens */
+  .login-title {
+    font-size: 1.5rem;
   }
 
-  .input-group {
-    width: 95%; /* Adjust width for smaller screens */
-  }
-
-  .button {
-    width: 90%; /* Buttons fill most of the screen */
+  .login-card {
+    padding: 1.5rem 2rem;
   }
 
   .icon-button {
-    width: 40px; /* Smaller icons */
+    width: 40px;
     height: 40px;
     font-size: 1rem;
   }
 
   .register-text {
-    font-size: 0.8rem; /* Adjust font size */
+    font-size: 0.8rem;
   }
 }
-
-/* Medium devices (tablets) */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .title {
-    font-size: 1.8rem; /* Slightly smaller title for tablets */
-  }
-
-  .input-group {
-    width: 90%;
-  }
-
-  .button {
-    width: 220px; /* Keep default button size */
-  }
-
-  .icon-button {
-    width: 45px;
-    height: 45px;
-  }
-
-  .register-text {
-    font-size: 0.9rem;
-  }
-}
-
-/* Large devices (

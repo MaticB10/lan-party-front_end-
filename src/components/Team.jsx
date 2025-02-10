@@ -6,14 +6,12 @@ import TebTeam from './team/teb_team';
 import TebRegisterTeam from './team/teb_register_team';
 import TebLogin from './team/teb_login';
 import TebInfo from './team/teb_info';
-import subtract from '../image/subtract.png';
 import '../styles/Team.css';
 
 function Team() {
-  const { user } = useAuth(); // Pridobimo informacije o prijavi
-  const [selectedTab, setSelectedTab] = useState('team'); // Privzeti zavihek
+  const { user } = useAuth();
+  const [selectedTab, setSelectedTab] = useState('team');
 
-  // Funkcija za prikaz vsebine na podlagi izbranega zavihka
   const renderContent = () => {
     switch (selectedTab) {
       case 'team':
@@ -31,33 +29,57 @@ function Team() {
 
   return (
     <div className="team-page">
-      <div className="background-image">
-        <img className="subtract" alt="Subtract" src={subtract} />
+      {/* Heading Section */}
+      <div className="top-heading">
+        <div className="heading-text">
+          <h1 className="heading-title">TEAMS & TOURNAMENTS</h1>
+          <p className="heading-subtitle">
+            Upravljanje ekip, prijave na turnirje in podrobne informacije o Lan Partyju 2025.
+          </p>
+        </div>
       </div>
-      <div className="team-content">
-        <div className="team-tab-content">{renderContent()}</div>
-        <div className="team-actions">
-          <button className="team-action-button" onClick={() => setSelectedTab('team')}>
-            <FontAwesomeIcon icon={faUsers} className="fa-icon" />
+
+      {/* Tabs & Content */}
+      <div className="team-main">
+        <nav className="team-nav">
+          <button
+            className={`nav-button ${selectedTab === 'team' ? 'active' : ''}`}
+            onClick={() => setSelectedTab('team')}
+          >
+            <FontAwesomeIcon icon={faUsers} />
             <span>Ekipa</span>
           </button>
+
           {user && (
             <>
-              <button className="team-action-button" onClick={() => setSelectedTab('registerTeam')}>
-                <FontAwesomeIcon icon={faUserPlus} className="fa-icon" />
+              <button
+                className={`nav-button ${selectedTab === 'registerTeam' ? 'active' : ''}`}
+                onClick={() => setSelectedTab('registerTeam')}
+              >
+                <FontAwesomeIcon icon={faUserPlus} />
                 <span>Prijavi ekipo</span>
               </button>
-              <button className="team-action-button" onClick={() => setSelectedTab('login')}>
-                <FontAwesomeIcon icon={faUserPlus} className="fa-icon" />
+
+              <button
+                className={`nav-button ${selectedTab === 'login' ? 'active' : ''}`}
+                onClick={() => setSelectedTab('login')}
+              >
+                <FontAwesomeIcon icon={faUserPlus} />
                 <span>Prijavi se</span>
               </button>
             </>
           )}
-          <button className="team-action-button" onClick={() => setSelectedTab('info')}>
-            <FontAwesomeIcon icon={faInfoCircle} className="fa-icon" />
+
+          <button
+            className={`nav-button ${selectedTab === 'info' ? 'active' : ''}`}
+            onClick={() => setSelectedTab('info')}
+          >
+            <FontAwesomeIcon icon={faInfoCircle} />
             <span>O dogodku</span>
           </button>
-        </div>
+        </nav>
+
+        <div className="content-card">{renderContent()}</div>
       </div>
     </div>
   );

@@ -21,7 +21,7 @@ function Footer() {
           <FontAwesomeIcon icon={faInstagram} /> ers_lan_scv
         </p>
         <p>
-          <FontAwesomeIcon icon={faDiscord} /> Lan Party 2024
+          <FontAwesomeIcon icon={faDiscord} /> Lan Party 2025
         </p>
       </div>
       <div className="sponsors">

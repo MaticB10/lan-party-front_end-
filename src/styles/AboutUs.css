@@ -1,56 +1,94 @@
-.about-us {
+/* ========= Global Variables & Resets ========= */
+:root {
+  --primary-color: #ffffff;
+  --accent-color: #ff6f61;
+  --background-color: #0b0b10;
+  --card-bg: #1c1f24;
+  --text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  --transition-speed: 0.3s;
+  --border-radius: 1rem;
+  --box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  --max-content-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Poppins', sans-serif;
-  color: white;
-  padding: 50px 20px;
+  background: radial-gradient(circle at 30% 30%, #14151c, var(--background-color) 60%);
+  color: var(--primary-color);
+  min-height: 100vh;
 }
 
-.about-us-content {
+/* ========= About Us Page Container ========= */
+.about-us-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem 5rem;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
   text-align: center;
-  padding: 50px 20px;
-  position: relative; /* Allows the pseudo-element to overflow */
 }
 
-.about-us-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
+/* ========= Header Styling ========= */
+.about-us-header {
+  margin-bottom: 2rem;
+}
+
+.about-us-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: var(--text-shadow);
+  margin-bottom: 1rem;
   position: relative;
   display: inline-block;
-  padding: 20px 40px; /* Added padding for better spacing */
-  color: white;
-  z-index: 1; /* Ensures text is above the background image */
+  padding: 20px 40px;
+  z-index: 1; /* Ensure text stays above the background image */
 }
 
-.about-us-content h2::before {
+.about-us-title::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 734px; /* Match the original image dimensions */
+  width: 734px; /* Use the original image dimensions */
   height: 704px;
-  transform: translate(-50%, -50%); /* Centers the image */
-  background: url('../image/AboutUs-Ellipse.png') no-repeat center center;
-  background-size: contain; /* Maintains original proportions */
-  z-index: -1; /* Sends the background image behind the text */
+  transform: translate(-50%, -50%);
+  background-size: contain;
+  z-index: -1;
   pointer-events: none;
 }
 
-.about-us-sections {
+/* ========= Content Sections ========= */
+.about-us-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Wider sections for desktop */
-  gap: 40px; /* Larger gap for spacing */
-  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  width: 100%;
+  padding: 0 20px;
 }
 
 .about-us-section {
-  border-color: #9CA8BB;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 15px;
-  padding: 30px; /* More padding for larger sections */
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  transition: transform var(--transition-speed);
   text-align: left;
 }
 
-.about-us-section h3 {
+.about-us-section:hover {
+  transform: translateY(-3px);
+}
+
+.about-us-section h2 {
   font-size: 1.8rem;
   margin-bottom: 10px;
 }
@@ -60,16 +98,17 @@
   line-height: 1.6;
 }
 
+/* ========= Responsive Adjustments ========= */
 @media (max-width: 768px) {
-  .about-us-content h2 {
+  .about-us-title {
     font-size: 2rem;
   }
 
-  .about-us-sections {
-    grid-template-columns: 1fr; /* Stack sections for smaller screens */
+  .about-us-content {
+    grid-template-columns: 1fr;
   }
 
   .about-us-section {
-    padding: 20px; /* Reduce padding for smaller screens */
+    padding: 1.5rem;
   }
 }

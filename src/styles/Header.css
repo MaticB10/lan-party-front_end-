@@ -1,142 +1,165 @@
+/* ========== GLOBAL LAYOUT ========== */
 .header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
   align-items: center;
-  padding: 20px 5vw; /* Flexible horizontal padding */
+  gap: 1rem;             
+  padding: 20px 5vw;      
   background-color: transparent;
   color: #ffffff;
   font-family: "Poppins", sans-serif;
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* ========== LEFT: TITLE / LOGO ========== */
+.header-left {
+  display: flex;
+  justify-content: flex-start; 
 }
 
 .header-title {
   font-weight: 700;
-  font-size: 1.5rem; /* Use relative units for scalable typography */
-  margin-bottom: 10px; /* Add spacing for smaller devices */
-}
-
-.header-title a {
+  font-size: 1.4rem;
+  text-decoration: none;
   color: #ffffff;
-  text-decoration: none; /* Remove underline */
 }
 
-.header-title a:hover {
-  text-decoration: none; /* Ensure no underline on hover */
+.header-title:hover {
+  text-decoration: underline; 
+}
+
+/* ========== CENTER: NAVIGATION ========== */
+.header-center {
+  display: flex;
+  justify-content: center;
 }
 
 .header-nav {
   display: flex;
-  gap: 2rem; /* Flexible gap between nav items */
-  flex-wrap: wrap; /* Wrap navigation items on smaller screens */
+  align-items: center;
+  gap: 1.5rem; 
+  flex-wrap: wrap; 
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .header-nav a,
 .header-nav span {
   color: #ffffff;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
 }
 
-.header-user a {
+.header-nav a:hover {
+  text-decoration: underline;
+}
+
+/* ========== RIGHT: USER MENU / LOGIN ========== */
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  position: relative; 
+}
+
+.header-login {
   color: #ffffff;
   text-decoration: none;
   font-weight: 500;
-  font-size: 1rem; /* Use relative units */
-  display: flex;
+  font-size: 1rem;
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem; /* Adjust gap between user icon and text */
+  gap: 0.5rem;
+}
+
+.header-login:hover {
+  text-decoration: underline;
 }
 
 .user-menu {
-  position: relative;
+  position: relative; 
   cursor: pointer;
 }
 
 .user-name {
   font-weight: bold;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
+/* ========== DROPDOWN MENU ========== */
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: 110%;
   right: 0;
   background-color: #040a11;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #333;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 10;
-  width: 150px;
+  width: 160px;
   text-align: left;
+  padding: 0.1rem 0;
 }
 
 .dropdown-item {
   padding: 10px;
   display: block;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   text-decoration: none;
   cursor: pointer;
+  
 }
 
 .dropdown-item:hover {
   background-color: #661ce7;
 }
 
-/* Media Queries for Responsiveness */
+/* ========== RESPONSIVE MEDIA QUERIES ========== */
 
-/* Small devices (phones) */
+/* SMALL DEVICES (PHONES) */
 @media (max-width: 768px) {
   .header {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center align everything */
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    justify-items: center; 
+    text-align: center;
+  }
+
+  .header-left,
+  .header-center,
+  .header-right {
+    width: 100%;
+    justify-content: center;
   }
 
   .header-title {
-    text-align: center; /* Center the title text */
-    margin-bottom: 20px; /* Add some spacing below the title */
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
   }
 
   .header-nav {
-    justify-content: center; /* Center the navigation items */
-    gap: 15px; /* Adjust gap between links */
+    justify-content: center; 
+    gap: 1rem;
+    margin-bottom: 0.5rem;
   }
 
-  .header-nav a,
-  .header-nav span {
-    font-size: 0.9rem; /* Reduce font size */
-  }
-
-  .header-user {
-    margin-top: 10px;
-  }
-
-  .header-user a {
-    top: 10px;
-  }
-
-  .user-menu {
-    width: 100%; /* Full width for dropdown trigger */
-    text-align: center; /* Center align */
+  .header-login,
+  .user-name {
+    margin-bottom: 1rem;
   }
 }
 
-/* Medium devices (tablets) */
+/* MEDIUM DEVICES (TABLETS) */
 @media (max-width: 1024px) {
   .header {
-    flex-wrap: wrap; /* Wrap header items */
-    padding: 20px 4vw; /* Adjust padding for tablets */
+    padding: 20px 3vw; 
   }
 
   .header-title {
-    font-size: 1.3rem; /* Slightly smaller title */
+    font-size: 1.3rem;
   }
 
   .header-nav {
-    gap: 1.5rem; /* Moderate gap between items */
-  }
-
-  .header-user a {
-    font-size: 1rem; /* Slightly smaller font size */
+    gap: 1rem;
   }
 }

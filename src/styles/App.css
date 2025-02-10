@@ -28,8 +28,7 @@
 .login-overlay,
 .register-overlay,
 .sponsors-overlay,
-.blog-overlay,
-.about-overlay {
+.blog-overlay {
   background: conic-gradient(
     from 88deg at 50% 50%,
     rgba(0, 111, 255, 0.65) 0deg,
@@ -53,20 +52,6 @@
 .register-overlay {
   width: 75vw;
   height: 55vh;
-}
-
-.team-overlay {
-  width: 1578px;
-  height: 500px;
-  flex-shrink: 0;
-  opacity: 0.8;
-  background: var(--fill, conic-gradient(from 89deg at 100.96% 31.6%, #006FFF 0deg, #FF00E5 304.2deg));
-  filter: blur(60px);
-  position: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
 }
 
 .sponsors-overlay {

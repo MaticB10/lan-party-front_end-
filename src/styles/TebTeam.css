@@ -18,7 +18,8 @@
 }
 
 .team-group {
-  background-color: #4a148c;
+  background: linear-gradient(135deg, #6a008a, #4a148c);
+  box-shadow: 0 0 10px rgba(106,0,138,0.5);
   padding: 15px;
   border-radius: 8px;
   min-width: 200px; /* Ensure minimum size */
