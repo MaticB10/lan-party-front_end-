@@ -108,6 +108,59 @@ body {
   box-shadow: 0 0 10px rgba(106,0,138,0.5);
 }
 
+/* ===== Dropdown Container ===== */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* ===== Main Button in Dropdown ===== */
+.nav-dropdown .nav-button {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Optional: Style the dropdown icon if desired */
+.nav-dropdown .dropdown-icon {
+  font-size: 0.9rem;
+}
+
+/* ===== Dropdown Content ===== */
+.nav-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  width: 235px;
+  flex-direction: column;
+}
+
+/* Show dropdown on hover */
+.nav-dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+/* Dropdown buttons styling */
+.nav-dropdown .dropdown-content button {
+  background: none;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  text-align: left;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+/* Hover state for dropdown options */
+.nav-dropdown .dropdown-content button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
 /* ========== SUB-TAB CONTENT CARD ========== */
 .content-card {
   width: 100%;

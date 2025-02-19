@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUsers, faUserPlus, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { faUsers, faUserPlus, faInfoCircle, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { useAuth } from '../contexts/AuthContext';
 import TebTeam from './team/teb_team';
 import TebRegisterTeam from './team/teb_register_team';
@@ -47,27 +47,29 @@ function Team() {
             onClick={() => setSelectedTab('team')}
           >
             <FontAwesomeIcon icon={faUsers} />
-            <span>Ekipa</span>
+            <span>Nabor ekip</span>
           </button>
 
           {user && (
-            <>
+            <div className="nav-dropdown">
               <button
-                className={`nav-button ${selectedTab === 'registerTeam' ? 'active' : ''}`}
-                onClick={() => setSelectedTab('registerTeam')}
+                className={`nav-button ${
+                  selectedTab === 'registerTeam' || selectedTab === 'login' ? 'active' : ''
+                }`}
               >
                 <FontAwesomeIcon icon={faUserPlus} />
-                <span>Prijavi ekipo</span>
+                <span>Prijava na turnerje</span>
+                <FontAwesomeIcon icon={faChevronDown} className="dropdown-icon" />
               </button>
-
-              <button
-                className={`nav-button ${selectedTab === 'login' ? 'active' : ''}`}
-                onClick={() => setSelectedTab('login')}
-              >
-                <FontAwesomeIcon icon={faUserPlus} />
-                <span>Prijavi se</span>
-              </button>
-            </>
+              <div className="dropdown-content">
+                <button onClick={() => setSelectedTab('registerTeam')}>
+                  Prijavi ekipo
+                </button>
+                <button onClick={() => setSelectedTab('login')}>
+                  Solo prijava
+                </button>
+              </div>
+            </div>
           )}
 
           <button

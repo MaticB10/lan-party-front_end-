@@ -196,43 +196,43 @@ function TebRegisterTeam() {
 
 
   return (
-    <div className="register-team-container">
-{showModal && (
-  <div className="modal-overlay">
-    <div className="modal">
-      <h2>Želite ustvariti ekipo?</h2>
-      <label htmlFor="team-name">Ime ekipe:</label>
-      <input
-        type="text"
-        id="team-name"
-        placeholder="Vnesite ime ekipe"
-        value={newTeamName}
-        onChange={(e) => setNewTeamName(e.target.value)}
-      />
-      <label htmlFor="select-tournament">Izberite turnir:</label>
-      <select
-        id="select-tournament"
-        value={selectedTournament}
-        onChange={(e) => setSelectedTournament(e.target.value)}
-      >
-        <option value="" disabled>
-          Izberite turnir
-        </option>
-        {tournaments.map((tournament) => (
-          <option key={tournament.id} value={tournament.id}>
-            {tournament.name}
-          </option>
-        ))}
-      </select>
-      <div className="modal-buttons">
-        <button onClick={handleCreateTeam}>Ustvari ekipo</button>
-        <button onClick={() => setShowModal(false)} className="cancel-button">
-          Ne
-        </button>
-      </div>
-    </div>
-  </div>
-)}
+    <div className="teb-register-team-container">
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <h2>Želite ustvariti ekipo?</h2>
+            <label htmlFor="team-name">Ime ekipe:</label>
+            <input
+              type="text"
+              id="team-name"
+              placeholder="Vnesite ime ekipe"
+              value={newTeamName}
+              onChange={(e) => setNewTeamName(e.target.value)}
+            />
+            <label htmlFor="select-tournament">Izberite turnir:</label>
+            <select
+              id="select-tournament"
+              value={selectedTournament}
+              onChange={(e) => setSelectedTournament(e.target.value)}
+            >
+              <option value="" disabled>
+                Izberite turnir
+              </option>
+              {tournaments.map((tournament) => (
+                <option key={tournament.id} value={tournament.id}>
+                  {tournament.name}
+                </option>
+              ))}
+            </select>
+            <div className="modal-buttons">
+              <button className="cancel-button" onClick={handleCreateTeam}>Ustvari ekipo</button>
+              <button className="cancel-button" onClick={() => setShowModal(false)} >
+                Ne
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {team ? (
         <div className="team-info">
@@ -270,7 +270,7 @@ function TebRegisterTeam() {
                 value={memberCode}
                 onChange={(e) => setMemberCode(e.target.value)}
               />
-              <button className='team-button' onClick={handleAddMember}>Dodaj</button>
+              <button className="team-button" onClick={handleAddMember}>Dodaj</button>
             </div>
           )}
 

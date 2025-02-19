@@ -176,6 +176,7 @@ function TebLogin({ studentId }) {
 
           {participate === 'yes' && (
             <>
+              <br />
               <label className="label-select">Izberi še drugi turnir:</label>
               <br />
               <select
